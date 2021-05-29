@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on A minimal Hugo website</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on A minimal Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NHL Draft Rankings Preview</title>
+      <link>/post/2021/05/23/preview/</link>
+      <pubDate>Sun, 23 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2021/05/23/preview/</guid>
+      <description>.playerheader {font-size: 150%;}.body {font-size: 110%;margin-left: 23.25%;}table { width: 100%;margin-top: -4%;background-color: white !important;}table, th, td {border: 1px solid black;border-collapse: collapse;}.header {font-size: 110%;padding: 2%;text-align: center;}.num {text-align: center;font-size: 150%;padding: 2%;}.footer {text-align: center;border-top-style: hidden;}.biotext{width: 32.5%;margin-left: 22.5%;}.image {float: left;width: 20%;height: 10%;margin-top: 4.</description>
+    </item>
+    
+  </channel>
+</rss>

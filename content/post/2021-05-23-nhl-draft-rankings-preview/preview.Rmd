@@ -1,0 +1,415 @@
+---
+title: NHL Draft Rankings Preview
+author: '@DraftLook'
+date: '2021-05-23'
+slug: preview
+categories:
+  - Rankings
+tags: []
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+options(knitr.duplicate.label = "allow")
+```
+
+```{r echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+library(linguisticsdown)
+
+url <- "https://docs.google.com/spreadsheets/d/15LQi8UZ41jR6bq6MLIGyjRSagLMigFaDl0hgeH2UpWc/edit?usp=sharing"
+info <- rio::import(file = url,which = 2)
+info <- clean_names(info)
+```
+
+<style type="text/css">
+
+@import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
+
+.playerheader {
+font-size: 150%;
+}
+.body {
+font-size: 110%;
+margin-left: 23.25%;
+}
+table { 
+width: 100%;
+margin-top: -4%;
+background-color: white !important;
+}
+table, th, td {
+border: 1px solid black;
+border-collapse: collapse;
+}
+.header {
+font-size: 110%;
+padding: 2%;
+text-align: center;
+}
+.num {
+text-align: center;
+font-size: 150%;
+padding: 2%;
+}
+.footer {
+text-align: center;
+border-top-style: hidden;
+}
+.biotext{
+width: 32.5%;
+margin-left: 22.5%;
+}
+.image {
+float: left;
+width: 20%;
+height: 10%;
+margin-top: 4.75%;
+margin-left: 2.5%;
+}
+.tableclass{
+float: right;
+width: 42.5%;
+margin-top: 6%;
+}
+.break {
+border-top-style: solid;
+border-top-color: black;
+margin-left: 0px;
+width: 100%;
+padding: 0%;
+}
+.bio{
+margin-left: 0%;
+padding: 2.5%;
+}
+.bodytext {
+margin-left: 22.5%;
+}
+.row { display: flex; padding-bottom: 1%; margin-left: 22.5%; margin-right: 0.05%; font-size: 110% }
+.column { flex: 0 0 50%; align-self: center; }
+.tab{
+font-size: 110%;
+}
+.full{
+width: 129%;
+margin-left: -29.25%;
+}
+.prftext{
+font-family: Spectral, sans serif;
+margin-left: 22.5%;
+}
+thead, tfoot, tr:nth-child(even) { 
+background: white;
+}
+.playercard {
+font-family: Lucida Console, monospace;
+}
+
+</style>
+
+<div class="full">
+<!-- PLAYER CARD-->
+<div class="playercard">
+```{r, echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+
+name <- "Luke Hughes"
+
+url <- "https://docs.google.com/spreadsheets/d/1gsGn70hHh80nC5cOJHc3TMHNEqWg4UawKXtPcuSK2Hw/edit#gid=478681110"
+data <- rio::import(file = url,which = 2)
+data <- clean_names(data)
+data$league_multiplier <- as.numeric(data$league_multiplier)
+
+player_data <- subset(data, player_name == "Sasha Pastujov")
+
+```
+
+<!-- Building Table -->
+<div class = "tableclass">
+<table>
+<tr class="header">
+<th>**GOALS**</th>
+<th>**ASSISTS**</th>
+<th>**POINTS**</th>
+</tr>
+<tr>
+<td class="num">`r round(player_data$goals/player_data$games_played,2)`</td>
+<td class="num">`r round(player_data$assists/player_data$games_played,2)`</td>
+<td class="num">`r round(player_data$points/player_data$games_played,2)`</td>
+</tr>
+<tr>
+<td class="footer">PER GAME</td>
+<td class="footer">PER GAME</td>
+<td class="footer">PER GAME</td>
+</tr>
+<tr class="header">
+<td>**ADJ GOALS**</td>
+<td>**ADJ ASSISTS**</td>
+<td>**ADJ POINTS**</td>
+</tr>
+<tr>
+<td class="num">
+`r if((player_data$goals/player_data$games_played*player_data$league_multiplier*82.0)<10) { formatC((player_data$goals/player_data$games_played*player_data$league_multiplier*82.0),digits=2, format="f")} else {formatC((player_data$goals/player_data$games_played*player_data$league_multiplier*82.0),digits=1, format="f")}`
+</td>
+<td class="num">
+`r if((player_data$assists/player_data$games_played*player_data$league_multiplier*82.0)<10) { formatC((player_data$assists/player_data$games_played*player_data$league_multiplier*82.0),digits=2, format="f")} else {formatC((player_data$assists/player_data$games_played*player_data$league_multiplier*82.0),digits=1, format="f")}`
+</td>
+<td class="num">
+`r if((player_data$points/player_data$games_played*player_data$league_multiplier*82.0)<10) { formatC((player_data$points/player_data$games_played*player_data$league_multiplier*82.0),digits=2, format="f")} else {formatC((player_data$points/player_data$games_played*player_data$league_multiplier*82.0),digits=1, format="f")}`
+</td>
+</tr>
+<tr>
+<td class="footer">PER 82</td>
+<td class="footer">PER 82</td>
+<td class="footer">PER 82</td>
+</tr>
+</table>
+</div>
+
+<!-- Inserting Image -->
+<div class="image">
+```{r pressure, echo=FALSE, out.width = "75%", out.extra = 'style="padding-left: 10%; padding-right: 10%"' }
+knitr::include_graphics(player_data$logo_url)
+```
+</div>
+
+<div class="biotext">
+<h1 class="bio" style="margin-top: 2.5%;">`r toupper(player_data$player_name)`<h1>
+<hr class="break" style="margin-top: -6%;"></hr>
+<h4 class = "bio" style="margin-top: -7%">`r toupper(player_data$position)`<h4>
+<h4 class ="bio" style="margin-top: -9.5%">`r toupper(paste(player_data$team, paste("(",player_data$league,")", sep = ""), sep = " "))`<h4>
+<br>
+<h4 class="bio" style="margin-top: -15.5%">SELLING POINT -- `r toupper(player_data$selling_point)`<h4>
+<h4 class="bio" style="margin-top: -10.5%">HEIGHT/WEIGHT -- `r paste(player_data$height, paste(player_data$weight, "LBS", sep = " "), sep = "/")`<h4>
+<h4 class="bio" style="margin-top: -10.5%">BIRTHDATE -- `r gsub("-", "/", player_data$birthdate)`<h4>
+<h4 class="bio" style="margin-top: -10.5%">AGE -- `r paste(round(player_data$age,2), "YEARS", sep = " ")`<h4>
+</div>
+
+<div class="bodytext">
+<br>
+<p class="tab" style="margin-top: -1.5%;"> `r player_data$description`<p>
+<p class="tab"> **Similar To:** `r player_data$similar_to`<p>
+<hr class="break" style="border:1px solid black"> </hr>
+<p class ="tab"> **Positives:** <p>
+<p class = "tab"> `r if(!is_empty(player_data$strength_1)) {paste("•", player_data$strength_1, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$strength_2)) {paste("•", player_data$strength_2, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$strength_3)) {paste("•", player_data$strength_3, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$strength_4)) {paste("•", player_data$strength_4, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$strength_5)) {paste("•", player_data$strength_5, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$strength_6)) {paste("•", player_data$strength_6, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$strength_7)) {paste("•", player_data$strength_7, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$strength_8)) {paste("•", player_data$strength_8, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$strength_9)) {paste("•", player_data$strength_9, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$strength_10)) {paste("•", player_data$strength_10, sep = " ")}`<p>
+
+<p class="tab"> **Negatives:** <p>
+<p class = "tab"> `r if(!is_empty(player_data$weakness_1)) {paste("•", player_data$weakness_1, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$weakness_2)) {paste("•", player_data$weakness_2, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$weakness_3)) {paste("•", player_data$weakness_3, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$weakness_4)) {paste("•", player_data$weakness_4, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$weakness_5)) {paste("•", player_data$weakness_5, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$weakness_6)) {paste("•", player_data$weakness_6, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$weakness_7)) {paste("•", player_data$weakness_7, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$weakness_8)) {paste("•", player_data$weakness_8, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$weakness_9)) {paste("•", player_data$weakness_9, sep = " ")}`<p>
+<p class = "tab"> `r if(!is_empty(player_data$weakness_10)) {paste("•", player_data$weakness_10, sep = " ")}`<p>
+
+<hr class="break" style="border:1px solid black"> </hr>
+<p class="tab"> **20-80 SCOUTING GRADES:** <p>
+</div>
+
+<div class="row">
+<div class="column"> SKATING -- `r player_data$skating_grade`</div>
+<div class="column"> PLAYMAKING -- `r player_data$playmaking_grade`</div>
+</div>
+<div class="row">
+<div class="column"> PUCK SKILLS -- `r player_data$puck_skills_grade`</div>
+<div class="column"> SCORING -- `r player_data$scoring_grade`</div>
+</div>
+<div class="row">
+<div class="column"> HOCKEY IQ -- `r player_data$hockey_iq_grade`</div>
+<div class="column"> PHYSICALITY -- `r player_data$physicality`</div>
+</div>
+</div>
+
+<div class="prftext">
+<!-- One Thing I Love -->
+<hr class="break" style="border:1px solid black"> </hr>
+**One Thing I Love**: `r if(!is_empty(info$otil_text_1)) {info$otil_text_1}`
+`r if(!is_empty(info$otil_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_1)) {knitr::include_graphics(info$otil_clip_1)}
+```
+`r if(!is_empty(info$otil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$otil_text_2)) {info$otil_text_2}`
+`r if(!is_empty(info$otil_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_2)) {knitr::include_graphics(info$otil_clip_2)}
+```
+`r if(!is_empty(info$otil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$otil_text_3)) {info$otil_text_3}`
+`r if(!is_empty(info$otil_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_3)) {knitr::include_graphics(info$otil_clip_3)}
+```
+`r if(!is_empty(info$otil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$otil_text_4)) {info$otil_text_4}`
+`r if(!is_empty(info$otil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_4)) {knitr::include_graphics(info$otil_clip_4)}
+```
+`r if(!is_empty(info$otil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$otil_text_5)) {info$otil_text_5}`
+`r if(!is_empty(info$otil_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_5)) {knitr::include_graphics(info$otil_clip_5)}
+```
+`r if(!is_empty(info$otil_clip_5)) { "<br>" }`
+
+<!-- Another Thing I Love -->
+`r if(!is_empty(info$atil_text_1)) {paste("**Another Thing I Love:**", info$atil_text_1, sep=" ")}`
+`r if(!is_empty(info$atil_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_1)) {knitr::include_graphics(info$atil_clip_1)}
+```
+`r if(!is_empty(info$atil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$atil_text_2)) {info$atil_text_2}`
+`r if(!is_empty(info$atil_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_2)) {knitr::include_graphics(info$atil_clip_2)}
+```
+`r if(!is_empty(info$atil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$atil_text_3)) {info$atil_text_3}`
+`r if(!is_empty(info$atil_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_3)) {knitr::include_graphics(info$atil_clip_3)}
+```
+`r if(!is_empty(info$atil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$atil_text_4)) {info$atil_text_4}`
+`r if(!is_empty(info$atil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
+```
+`r if(!is_empty(info$atil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$atil_text_5)) {info$atil_text_5}`
+`r if(!is_empty(info$atil_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_5)) {knitr::include_graphics(info$atil_clip_5)}
+```
+`r if(!is_empty(info$atil_clip_5)) { "<br>" }`
+
+<!-- Swing Skill -->
+`r if(!is_empty(info$omtil_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
+`r if(!is_empty(info$ss_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_1)) {knitr::include_graphics(info$ss_clip_1)}
+```
+`r if(!is_empty(info$ss_clip_1)) { "<br>" }`
+`r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
+`r if(!is_empty(info$ss_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_2)) {knitr::include_graphics(info$ss_clip_2)}
+```
+`r if(!is_empty(info$ss_clip_2)) { "<br>" }`
+`r if(!is_empty(info$ss_text_3)) {info$ss_text_3}`
+`r if(!is_empty(info$ss_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_3)) {knitr::include_graphics(info$ss_clip_3)}
+```
+`r if(!is_empty(info$ss_clip_3)) { "<br>" }`
+`r if(!is_empty(info$ss_text_4)) {info$ss_text_4}`
+`r if(!is_empty(info$ss_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_4)) {knitr::include_graphics(info$ss_clip_4)}
+```
+`r if(!is_empty(info$ss_clip_4)) { "<br>" }`
+`r if(!is_empty(info$ss_text_5)) {info$ss_text_5}`
+`r if(!is_empty(info$ss_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_5)) {knitr::include_graphics(info$ss_clip_5)}
+```
+`r if(!is_empty(info$ss_clip_5)) { "<br>" }`
+`r if(!is_empty(info$ss_text_6)) {info$ss_text_6}`
+`r if(!is_empty(info$ss_text_6)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_6)) {knitr::include_graphics(info$ss_clip_6)}
+```
+`r if(!is_empty(info$ss_clip_6)) { "<br>" }`
+`r if(!is_empty(info$ss_text_7)) {info$ss_text_7}`
+`r if(!is_empty(info$ss_text_7)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_7)) {knitr::include_graphics(info$ss_clip_7)}
+```
+`r if(!is_empty(info$ss_clip_7)) { "<br>" }`
+`r if(!is_empty(info$ss_text_8)) {info$ss_text_8}`
+`r if(!is_empty(info$ss_text_8)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_8)) {knitr::include_graphics(info$ss_clip_8)}
+```
+`r if(!is_empty(info$ss_clip_8)) { "<br>" }`
+`r if(!is_empty(info$ss_text_9)) {info$ss_text_9}`
+`r if(!is_empty(info$ss_text_9)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_9)) {knitr::include_graphics(info$ss_clip_9)}
+```
+`r if(!is_empty(info$ss_clip_9)) { "<br>" }`
+`r if(!is_empty(info$ss_text_10)) {info$ss_text_10}`
+`r if(!is_empty(info$ss_text_10)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_10)) {knitr::include_graphics(info$ss_clip_10)}
+```
+`r if(!is_empty(info$ss_clip_10)) { "<br>" }`
+
+
+<!-- Development -->
+`r if(!is_empty(info$dev_text_1)) {paste("**Development:**", info$dev_text_1, sep=" ")}`
+`r if(!is_empty(info$dev_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_1)) {knitr::include_graphics(info$dev_clip_1)}
+```
+`r if(!is_empty(info$dev_clip_1)) { "<br>" }`
+`r if(!is_empty(info$dev_text_2)) {info$dev_text_2}`
+`r if(!is_empty(info$dev_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_2)) {knitr::include_graphics(info$dev_clip_2)}
+```
+`r if(!is_empty(info$dev_clip_2)) { "<br>" }`
+`r if(!is_empty(info$dev_text_3)) {info$dev_text_3}`
+`r if(!is_empty(info$dev_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_3)) {knitr::include_graphics(info$dev_clip_3)}
+```
+`r if(!is_empty(info$dev_clip_3)) { "<br>" }`
+`r if(!is_empty(info$dev_text_4)) {info$dev_text_4}`
+`r if(!is_empty(info$dev_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_4)) {knitr::include_graphics(info$dev_clip_4)}
+```
+`r if(!is_empty(info$dev_clip_4)) { "<br>" }`
+`r if(!is_empty(info$dev_text_5)) {info$dev_text_5}`
+`r if(!is_empty(info$dev_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
+```
+`r if(!is_empty(info$dev_clip_5)) { "<br>" }`
+
+<!-- Projection -->
+**Projection:**
+<br>
+`r if(!is_empty(info$top_end_proj)) {paste("*Top-end:*", info$top_end_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$mid_level_proj)) {paste("*Mid-level:*", info$mid_level_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$low_end_proj)) {paste("*Low-end:*", info$low_end_proj, sep=" ")}`
+</div>
+
+</div>

@@ -1,0 +1,16 @@
+---
+title: "Links"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Email: nhldraftlook@gmail.com
+<br>
+[Twitter](https://twitter.com/draftlook)
+<br>
+[Substack](https://nhldraftlookhockey.substack.com)
+<br>
+[The Prospect Network](https://theprospectnetwork.ca)
