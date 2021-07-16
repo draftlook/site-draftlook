@@ -550,7 +550,7 @@ if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
 </div>
 </div>
 
-**26. Logan Stankoven, RHC/RW, Kamloops Blazers (WHL)**
+**26. Logan Stankoven, RW/RHC, Kamloops Blazers (WHL)**
 ```{r echo=FALSE }
 htmltools::includeHTML("C:\\Users\\ellis\\Desktop\\site-draftlook\\Cards\\LStankoven.html")
 ```
