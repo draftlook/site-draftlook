@@ -1537,7 +1537,7 @@ if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
 <!-- Swing Skill -->
 `r if(!is_empty(info$ss_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
 `r if(!is_empty(info$ss_text_1)) { "<br>" }`
-![](https://youtu.be/JT7mglMgJhY)
+[Video](https://youtu.be/JT7mglMgJhY)
 `r if(!is_empty(info$ss_clip_1)) { "<br>" }`
 `r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
 `r if(!is_empty(info$ss_text_2)) { "<br>" }`
@@ -1655,9 +1655,6 @@ if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
 
 </div>
 </div>
-
-*Tier Two*
-<br>
 
 **8. William Eklund, LHC/LW, Djurgardens (SHL)**
 ```{r echo=FALSE }
