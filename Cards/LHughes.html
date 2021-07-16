@@ -1,0 +1,287 @@
+
+
+
+<style type="text/css">
+
+@import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
+
+.playerheader {
+font-size: 150%;
+}
+.body {
+font-size: 110%;
+margin-left: 23.25%;
+}
+table { 
+width: 100%;
+margin-top: -9%;
+background-color: white !important;
+}
+table, th, td {
+border: 1px solid black;
+border-collapse: collapse;
+}
+.header {
+font-size: 110%;
+padding: 2%;
+text-align: center;
+}
+.num {
+text-align: center;
+font-size: 150%;
+padding: 2%;
+}
+.footer {
+text-align: center;
+border-top-style: hidden;
+}
+.biotext{
+width: 32.5%;
+margin-left: 22.5%;
+padding: 0%;
+}
+.image {
+float: left;
+width: 18%;
+height: 10%;
+margin-top: 4.75%;
+margin-left: 0%;
+}
+.tableclass{
+float: right;
+width: 42.5%;
+margin-top: 6%;
+}
+.break {
+border-top-style: solid;
+border-top-color: black;
+margin-left: 0px;
+width: 100%;
+padding: 0%;
+}
+.bio{
+margin-left: 0%;
+padding: 0%;
+}
+.bodytext {
+margin-left: 22.5%;
+}
+.row { display: flex; padding-bottom: 1%; margin-left: 22.5%; margin-right: 0.05%; font-size: 110% }
+.column { flex: 0 0 50%; align-self: center; }
+.tab{
+font-size: 110%;
+}
+.prftext{
+font-family: Spectral, sans serif;
+margin-left: 22.5%;
+}
+thead, tfoot, tr:nth-child(even) { 
+background: white;
+}
+.playercard {
+font-family: Lucida Console, monospace;
+width: 129%;
+margin-left: -29%;
+}
+
+</style>
+<div class="playercard">
+<!-- Building Table -->
+<div class="tableclass">
+<table>
+<tr class="header">
+<th>
+<strong>GOALS</strong>
+</th>
+<th>
+<strong>ASSISTS</strong>
+</th>
+<th>
+<strong>POINTS</strong>
+</th>
+</tr>
+<tr>
+<td class="num">
+0.22
+</td>
+<td class="num">
+0.61
+</td>
+<td class="num">
+0.83
+</td>
+</tr>
+<tr>
+<td class="footer">
+PER GAME
+</td>
+<td class="footer">
+PER GAME
+</td>
+<td class="footer">
+PER GAME
+</td>
+</tr>
+<tr class="header">
+<td>
+<strong>ADJ GOALS</strong>
+</td>
+<td>
+<strong>ADJ ASSISTS</strong>
+</td>
+<td>
+<strong>ADJ POINTS</strong>
+</td>
+</tr>
+<tr>
+<td class="num">
+2.37
+</td>
+<td class="num">
+6.51
+</td>
+<td class="num">
+8.88
+</td>
+</tr>
+<tr>
+<td class="footer">
+PER 82
+</td>
+<td class="footer">
+PER 82
+</td>
+<td class="footer">
+PER 82
+</td>
+</tr>
+</table>
+</div>
+<!-- Inserting Image -->
+<div class="image">
+<p><img src="data:image/png;base64,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" width="100%" height="90%" style="padding-left: 10%; padding-right: 10%" /></p>
+</div>
+<div class="biotext">
+<h1 class="bio">
+L. HUGHES
+<h1>
+<hr class="break" style="margin-top: -5%;">
+</hr>
+<h4 class="bio" style="margin-top: -5%">
+LEFT-SHOT DEFENDER
+<h4>
+<h4 class="bio" style="margin-top: -4%">
+UNITED STATES (USNTDP)
+<h4>
+<h5 class="bio" style="margin-top: -4%">
+SELLING POINT – MOBILITY
+<h5>
+<h5 class="bio" style="margin-top: -4%">
+HEIGHT/WEIGHT – 6’2&quot;&quot;/176 LBS
+<h5>
+<h5 class="bio" style="margin-top: -4%">
+BIRTHDATE – 2003/09/09
+<h5>
+<h5 class="bio" style="margin-top: -4%">
+AGE – 17.02 YEARS
+<h5>
+</div>
+<div class="bodytext">
+<br>
+<p class="tab" style="margin-top: -1.5%;">
+Brother of Quinn, a highly mobile defender with a very smooth skating stride and elusive qualities.
+<p>
+<p class="tab">
+<strong>Similar To:</strong> Quinn Hughes (kind of)
+<p>
+<hr class="break" style="border:1px solid black">
+</hr>
+<p class="tab">
+<strong>Positives:</strong>
+<p>
+<p class="tab">
+• So smooth on his feet. Long stride, excellent balance, and able to mix in crossovers very effectively. I don’t think he’s <em>extremely</em> quick or explosive, but his four-way mobility is excellent.
+<p>
+<p class="tab">
+• Very comfortable making plays under forechecking pressure. Can curl off of opponents bearing down on his back, wheel out of traffic, and find space to make plays.
+<p>
+<p class="tab">
+• Capable of leading the entry himself and confident in those situations. Has the skating and poise to make plays out of those spots and can respond quickly to defenders that step up looking to make a play on him.
+<p>
+<p class="tab">
+• A proficient outlet passer with a knack for the stretch pass. Long passes appear to be the jewel of his oulet package.
+<p>
+<p class="tab">
+• Eager to join the rush as a late man, using his skating to catch up to the play and present an option as the late man.
+<p>
+<p class="tab">
+• Looks comfortable and confident with the puck in the offensive zone, and can show flashes of high-level offensive ability.
+<p>
+<p class="tab">
+• Shifty and mobile on the offensive blueline, able to walk the line and look for something that may open up.
+<p>
+<p class="tab">
+• Has the mobility and reach to develop into a smothering NZ defender, although this isn’t here yet.
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<strong>Negatives:</strong>
+<p>
+<p class="tab">
+• Luke’s point totals weren’t reflective of some of the flashes of o-zone abiltiy that he’s shown. Acheiving greater consistency with his offensive play should show up on the scoresheet.
+<p>
+<p class="tab">
+• Isn’t the best short-to-mid range outlet passer in this crop, doesn’t seem particularly natural in those spots and doesn’t have that knack for hitting his forwards in stride at the best spot in their route.
+<p>
+<p class="tab">
+• Can be contained outside fairly easily on the rush and will often stop up and look to slow the play down, numbing the imminent danger of the attack.
+<p>
+<p class="tab">
+• Shot isn’t much of a weapon at all from beyond the immediate slot. Could gain from additional power but shooting shouldn’t be a major emphasis for defenders.
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<hr class="break" style="border:1px solid black">
+</hr>
+<p class="tab">
+<strong>20-80 SCOUTING GRADES:</strong>
+<p>
+</div>
+<div class="row">
+<div class="column">
+SKATING – 60
+</div>
+<div class="column">
+PLAYMAKING – 60
+</div>
+</div>
+<div class="row">
+<div class="column">
+PUCK SKILLS – 50
+</div>
+<div class="column">
+SCORING – 40
+</div>
+</div>
+<div class="row">
+<div class="column">
+HOCKEY IQ – 55
+</div>
+<div class="column">
+PHYSICALITY – 45
+</div>
+</div>
+</div>

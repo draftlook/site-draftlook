@@ -1,0 +1,2128 @@
+---
+title: "Storage"
+author: '@DraftLook'
+date: "14/07/2021"
+output: html_document
+---
+
+
+
+**11. Matthew Coronato, LW, Chicago Steel (USHL)**
+```{r echo=FALSE }
+htmltools::includeHTML("C:\\Users\\ellis\\Desktop\\site-draftlook\\Cards\\MCoronato.html")
+```
+
+```{r echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+library(linguisticsdown)
+
+url <- "https://docs.google.com/spreadsheets/d/15LQi8UZ41jR6bq6MLIGyjRSagLMigFaDl0hgeH2UpWc/edit?usp=sharing"
+info <- rio::import(file = url,which = 2)
+info <- clean_names(info)
+
+info <- mutate_all(info, funs(str_replace(., "â€™", "'")))
+
+info <- subset(info, player_name == "Matthew Coronato")
+```
+
+<div class="prftext" style="font-family: Lucida Console, monospace; margin-left: -0%;">
+<!-- One Thing I Love -->
+<hr class="break" style="border:1px solid black"> </hr>
+**One Thing I Love**: `r if(!is_empty(info$otil_text_1)) {info$otil_text_1}`
+`r if(!is_empty(info$otil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_1)) {knitr::include_graphics(info$otil_clip_1)}
+```
+`r if(!is_empty(info$otil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$otil_text_2)) {info$otil_text_2}`
+`r if(!is_empty(info$otil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_2)) {knitr::include_graphics(info$otil_clip_2)}
+```
+`r if(!is_empty(info$otil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$otil_text_3)) {info$otil_text_3}`
+`r if(!is_empty(info$otil_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_3)) {knitr::include_graphics(info$otil_clip_3)}
+```
+`r if(!is_empty(info$otil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$otil_text_4)) {info$otil_text_4}`
+`r if(!is_empty(info$otil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_4)) {knitr::include_graphics(info$otil_clip_4)}
+```
+`r if(!is_empty(info$otil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$otil_text_5)) {info$otil_text_5}`
+`r if(!is_empty(info$otil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_5)) {knitr::include_graphics(info$otil_clip_5)}
+```
+`r if(!is_empty(info$otil_clip_5)) { "<br>" }`
+
+  <!-- Another Thing I Love -->
+`r if(!is_empty(info$atil_text_1)) {paste("**Another Thing I Love:**", info$atil_text_1, sep=" ")}`
+`r if(!is_empty(info$atil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_1)) {knitr::include_graphics(info$atil_clip_1)}
+```
+`r if(!is_empty(info$atil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$atil_text_2)) {info$atil_text_2}`
+`r if(!is_empty(info$atil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_2)) {knitr::include_graphics(info$atil_clip_2)}
+```
+`r if(!is_empty(info$atil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$atil_text_3)) {info$atil_text_3}`
+`r if(!is_empty(info$atil_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_3)) {knitr::include_graphics(info$atil_clip_3)}
+```
+`r if(!is_empty(info$atil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$atil_text_4)) {info$atil_text_4}`
+`r if(!is_empty(info$atil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
+```
+`r if(!is_empty(info$atil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$atil_text_5)) {info$atil_text_5}`
+`r if(!is_empty(info$atil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_5)) {knitr::include_graphics(info$atil_clip_5)}
+```
+`r if(!is_empty(info$atil_clip_5)) { "<br>" }`
+  
+<!-- Swing Skill -->
+`r if(!is_empty(info$ss_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
+`r if(!is_empty(info$ss_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_1)) {knitr::include_graphics(info$ss_clip_1)}
+```
+`r if(!is_empty(info$ss_clip_1)) { "<br>" }`
+`r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
+`r if(!is_empty(info$ss_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_2)) {knitr::include_graphics(info$ss_clip_2)}
+```
+`r if(!is_empty(info$ss_clip_2)) { "<br>" }`
+`r if(!is_empty(info$ss_text_3)) {info$ss_text_3}`
+`r if(!is_empty(info$ss_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_3)) {knitr::include_graphics(info$ss_clip_3)}
+```
+`r if(!is_empty(info$ss_clip_3)) { "<br>" }`
+`r if(!is_empty(info$ss_text_4)) {info$ss_text_4}`
+`r if(!is_empty(info$ss_text_4)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_4)) {knitr::include_graphics(info$ss_clip_4)}
+```
+`r if(!is_empty(info$ss_clip_4)) { "<br>" }`
+`r if(!is_empty(info$ss_text_5)) {info$ss_text_5}`
+`r if(!is_empty(info$ss_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_5)) {knitr::include_graphics(info$ss_clip_5)}
+```
+`r if(!is_empty(info$ss_clip_5)) { "<br>" }`
+`r if(!is_empty(info$ss_text_6)) {info$ss_text_6}`
+`r if(!is_empty(info$ss_text_6)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_6)) {knitr::include_graphics(info$ss_clip_6)}
+```
+`r if(!is_empty(info$ss_clip_6)) { "<br>" }`
+`r if(!is_empty(info$ss_text_7)) {info$ss_text_7}`
+`r if(!is_empty(info$ss_text_7)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_7)) {knitr::include_graphics(info$ss_clip_7)}
+```
+`r if(!is_empty(info$ss_clip_7)) { "<br>" }`
+`r if(!is_empty(info$ss_text_8)) {info$ss_text_8}`
+`r if(!is_empty(info$ss_text_8)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_8)) {knitr::include_graphics(info$ss_clip_8)}
+```
+`r if(!is_empty(info$ss_clip_8)) { "<br>" }`
+`r if(!is_empty(info$ss_text_9)) {info$ss_text_9}`
+`r if(!is_empty(info$ss_text_9)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_9)) {knitr::include_graphics(info$ss_clip_9)}
+```
+`r if(!is_empty(info$ss_clip_9)) { "<br>" }`
+`r if(!is_empty(info$ss_text_10)) {info$ss_text_10}`
+`r if(!is_empty(info$ss_text_10)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_10)) {knitr::include_graphics(info$ss_clip_10)}
+```
+`r if(!is_empty(info$ss_clip_10)) { "<br>" }`
+  
+<!-- Development -->
+`r if(!is_empty(info$dev_text_1)) {paste("**Development:**", info$dev_text_1, sep=" ")}`
+`r if(!is_empty(info$dev_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_1)) {knitr::include_graphics(info$dev_clip_1)}
+```
+`r if(!is_empty(info$dev_clip_1)) { "<br>" }`
+`r if(!is_empty(info$dev_text_2)) {info$dev_text_2}`
+`r if(!is_empty(info$dev_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_2)) {knitr::include_graphics(info$dev_clip_2)}
+```
+`r if(!is_empty(info$dev_clip_2)) { "<br>" }`
+`r if(!is_empty(info$dev_text_3)) {info$dev_text_3}`
+`r if(!is_empty(info$dev_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_3)) {knitr::include_graphics(info$dev_clip_3)}
+```
+`r if(!is_empty(info$dev_clip_3)) { "<br>" }`
+`r if(!is_empty(info$dev_text_4)) {info$dev_text_4}`
+`r if(!is_empty(info$dev_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_4)) {knitr::include_graphics(info$dev_clip_4)}
+```
+`r if(!is_empty(info$dev_clip_4)) { "<br>" }`
+`r if(!is_empty(info$dev_text_5)) {info$dev_text_5}`
+`r if(!is_empty(info$dev_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
+```
+`r if(!is_empty(info$dev_clip_5)) { "<br>" }`
+  
+<!-- Projection -->
+**Projection:**
+<br>
+`r if(!is_empty(info$top_end_proj)) {paste("*Top-end:*", info$top_end_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$mid_level_proj)) {paste("*Mid-level:*", info$mid_level_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$low_end_proj)) {paste("*Low-end:*", info$low_end_proj, sep=" ")}`
+
+<!-- Methodology -->
+**Methodology:**
+<br>
+`r if(!is_empty(info$methodology_1)) {info$methodology_1}`
+```{r}
+if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
+```
+`r if(!is_empty(info$methodology_2)) {info$methodology_2}`
+
+<!-- Related -->
+`r if(!is_empty(info$related_1)) {"**Related**"}`
+`r if(!is_empty(info$related_1)) {"<br>"}`
+`r if(!is_empty(info$related_1)) {paste("•", paste(paste("[", paste(info$rel_text_1, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_2)) {"<br>"}`
+`r if(!is_empty(info$related_2)) {paste("•", paste(paste("[", paste(info$rel_text_2, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_3)) {"<br>"}`
+`r if(!is_empty(info$related_3)) {paste("•", paste(paste("[", paste(info$rel_text_3, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+
+</div>
+</div>
+
+**12. Cole Sillinger, LHC, Sioux Falls Stampede (USHL)**
+```{r echo=FALSE }
+htmltools::includeHTML("C:\\Users\\ellis\\Desktop\\site-draftlook\\Cards\\CSillinger.html")
+```
+
+```{r echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+library(linguisticsdown)
+
+url <- "https://docs.google.com/spreadsheets/d/15LQi8UZ41jR6bq6MLIGyjRSagLMigFaDl0hgeH2UpWc/edit?usp=sharing"
+info <- rio::import(file = url,which = 2)
+info <- clean_names(info)
+
+info <- mutate_all(info, funs(str_replace(., "â€™", "'")))
+
+info <- subset(info, player_name == "Cole Sillinger")
+```
+
+<div class="prftext" style="font-family: Lucida Console, monospace; margin-left: -0%;">
+<!-- One Thing I Love -->
+<hr class="break" style="border:1px solid black"> </hr>
+**One Thing I Love**: `r if(!is_empty(info$otil_text_1)) {info$otil_text_1}`
+`r if(!is_empty(info$otil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_1)) {knitr::include_graphics(info$otil_clip_1)}
+```
+`r if(!is_empty(info$otil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$otil_text_2)) {info$otil_text_2}`
+`r if(!is_empty(info$otil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_2)) {knitr::include_graphics(info$otil_clip_2)}
+```
+`r if(!is_empty(info$otil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$otil_text_3)) {info$otil_text_3}`
+`r if(!is_empty(info$otil_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_3)) {knitr::include_graphics(info$otil_clip_3)}
+```
+`r if(!is_empty(info$otil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$otil_text_4)) {info$otil_text_4}`
+`r if(!is_empty(info$otil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_4)) {knitr::include_graphics(info$otil_clip_4)}
+```
+`r if(!is_empty(info$otil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$otil_text_5)) {info$otil_text_5}`
+`r if(!is_empty(info$otil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_5)) {knitr::include_graphics(info$otil_clip_5)}
+```
+`r if(!is_empty(info$otil_clip_5)) { "<br>" }`
+
+  <!-- Another Thing I Love -->
+`r if(!is_empty(info$atil_text_1)) {paste("**Another Thing I Love:**", info$atil_text_1, sep=" ")}`
+`r if(!is_empty(info$atil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_1)) {knitr::include_graphics(info$atil_clip_1)}
+```
+`r if(!is_empty(info$atil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$atil_text_2)) {info$atil_text_2}`
+`r if(!is_empty(info$atil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_2)) {knitr::include_graphics(info$atil_clip_2)}
+```
+`r if(!is_empty(info$atil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$atil_text_3)) {info$atil_text_3}`
+`r if(!is_empty(info$atil_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_3)) {knitr::include_graphics(info$atil_clip_3)}
+```
+`r if(!is_empty(info$atil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$atil_text_4)) {info$atil_text_4}`
+`r if(!is_empty(info$atil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
+```
+`r if(!is_empty(info$atil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$atil_text_5)) {info$atil_text_5}`
+`r if(!is_empty(info$atil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_5)) {knitr::include_graphics(info$atil_clip_5)}
+```
+`r if(!is_empty(info$atil_clip_5)) { "<br>" }`
+  
+<!-- Swing Skill -->
+`r if(!is_empty(info$ss_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
+`r if(!is_empty(info$ss_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_1)) {knitr::include_graphics(info$ss_clip_1)}
+```
+`r if(!is_empty(info$ss_clip_1)) { "<br>" }`
+`r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
+`r if(!is_empty(info$ss_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_2)) {knitr::include_graphics(info$ss_clip_2)}
+```
+`r if(!is_empty(info$ss_clip_2)) { "<br>" }`
+`r if(!is_empty(info$ss_text_3)) {info$ss_text_3}`
+`r if(!is_empty(info$ss_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_3)) {knitr::include_graphics(info$ss_clip_3)}
+```
+`r if(!is_empty(info$ss_clip_3)) { "<br>" }`
+`r if(!is_empty(info$ss_text_4)) {info$ss_text_4}`
+`r if(!is_empty(info$ss_text_4)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_4)) {knitr::include_graphics(info$ss_clip_4)}
+```
+`r if(!is_empty(info$ss_clip_4)) { "<br>" }`
+`r if(!is_empty(info$ss_text_5)) {info$ss_text_5}`
+`r if(!is_empty(info$ss_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_5)) {knitr::include_graphics(info$ss_clip_5)}
+```
+`r if(!is_empty(info$ss_clip_5)) { "<br>" }`
+`r if(!is_empty(info$ss_text_6)) {info$ss_text_6}`
+`r if(!is_empty(info$ss_text_6)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_6)) {knitr::include_graphics(info$ss_clip_6)}
+```
+`r if(!is_empty(info$ss_clip_6)) { "<br>" }`
+`r if(!is_empty(info$ss_text_7)) {info$ss_text_7}`
+`r if(!is_empty(info$ss_text_7)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_7)) {knitr::include_graphics(info$ss_clip_7)}
+```
+`r if(!is_empty(info$ss_clip_7)) { "<br>" }`
+`r if(!is_empty(info$ss_text_8)) {info$ss_text_8}`
+`r if(!is_empty(info$ss_text_8)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_8)) {knitr::include_graphics(info$ss_clip_8)}
+```
+`r if(!is_empty(info$ss_clip_8)) { "<br>" }`
+`r if(!is_empty(info$ss_text_9)) {info$ss_text_9}`
+`r if(!is_empty(info$ss_text_9)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_9)) {knitr::include_graphics(info$ss_clip_9)}
+```
+`r if(!is_empty(info$ss_clip_9)) { "<br>" }`
+`r if(!is_empty(info$ss_text_10)) {info$ss_text_10}`
+`r if(!is_empty(info$ss_text_10)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_10)) {knitr::include_graphics(info$ss_clip_10)}
+```
+`r if(!is_empty(info$ss_clip_10)) { "<br>" }`
+  
+<!-- Development -->
+`r if(!is_empty(info$dev_text_1)) {paste("**Development:**", info$dev_text_1, sep=" ")}`
+`r if(!is_empty(info$dev_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_1)) {knitr::include_graphics(info$dev_clip_1)}
+```
+`r if(!is_empty(info$dev_clip_1)) { "<br>" }`
+`r if(!is_empty(info$dev_text_2)) {info$dev_text_2}`
+`r if(!is_empty(info$dev_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_2)) {knitr::include_graphics(info$dev_clip_2)}
+```
+`r if(!is_empty(info$dev_clip_2)) { "<br>" }`
+`r if(!is_empty(info$dev_text_3)) {info$dev_text_3}`
+`r if(!is_empty(info$dev_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_3)) {knitr::include_graphics(info$dev_clip_3)}
+```
+`r if(!is_empty(info$dev_clip_3)) { "<br>" }`
+`r if(!is_empty(info$dev_text_4)) {info$dev_text_4}`
+`r if(!is_empty(info$dev_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_4)) {knitr::include_graphics(info$dev_clip_4)}
+```
+`r if(!is_empty(info$dev_clip_4)) { "<br>" }`
+`r if(!is_empty(info$dev_text_5)) {info$dev_text_5}`
+`r if(!is_empty(info$dev_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
+```
+`r if(!is_empty(info$dev_clip_5)) { "<br>" }`
+  
+<!-- Projection -->
+**Projection:**
+<br>
+`r if(!is_empty(info$top_end_proj)) {paste("*Top-end:*", info$top_end_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$mid_level_proj)) {paste("*Mid-level:*", info$mid_level_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$low_end_proj)) {paste("*Low-end:*", info$low_end_proj, sep=" ")}`
+
+<!-- Methodology -->
+**Methodology:**
+<br>
+`r if(!is_empty(info$methodology_1)) {info$methodology_1}`
+```{r}
+if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
+```
+`r if(!is_empty(info$methodology_2)) {info$methodology_2}`
+
+<!-- Related -->
+`r if(!is_empty(info$related_1)) {"**Related**"}`
+`r if(!is_empty(info$related_1)) {"<br>"}`
+`r if(!is_empty(info$related_1)) {paste("•", paste(paste("[", paste(info$rel_text_1, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_2)) {"<br>"}`
+`r if(!is_empty(info$related_2)) {paste("•", paste(paste("[", paste(info$rel_text_2, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_3)) {"<br>"}`
+`r if(!is_empty(info$related_3)) {paste("•", paste(paste("[", paste(info$rel_text_3, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+
+</div>
+</div>
+
+**13. Simon Edvinsson, LHD, Vasteras IK (HockeyAllsvenskan)**
+```{r echo=FALSE }
+htmltools::includeHTML("C:\\Users\\ellis\\Desktop\\site-draftlook\\Cards\\SEdvinsson.html")
+```
+
+```{r echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+library(linguisticsdown)
+
+url <- "https://docs.google.com/spreadsheets/d/15LQi8UZ41jR6bq6MLIGyjRSagLMigFaDl0hgeH2UpWc/edit?usp=sharing"
+info <- rio::import(file = url,which = 2)
+info <- clean_names(info)
+
+info <- mutate_all(info, funs(str_replace(., "â€™", "'")))
+
+info <- subset(info, player_name == "Simon Edvinsson")
+```
+
+<div class="prftext" style="font-family: Lucida Console, monospace; margin-left: -0%;">
+<!-- One Thing I Love -->
+<hr class="break" style="border:1px solid black"> </hr>
+**One Thing I Love**: `r if(!is_empty(info$otil_text_1)) {info$otil_text_1}`
+`r if(!is_empty(info$otil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_1)) {knitr::include_graphics(info$otil_clip_1)}
+```
+`r if(!is_empty(info$otil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$otil_text_2)) {info$otil_text_2}`
+`r if(!is_empty(info$otil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_2)) {knitr::include_graphics(info$otil_clip_2)}
+```
+`r if(!is_empty(info$otil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$otil_text_3)) {info$otil_text_3}`
+`r if(!is_empty(info$otil_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_3)) {knitr::include_graphics(info$otil_clip_3)}
+```
+`r if(!is_empty(info$otil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$otil_text_4)) {info$otil_text_4}`
+`r if(!is_empty(info$otil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_4)) {knitr::include_graphics(info$otil_clip_4)}
+```
+`r if(!is_empty(info$otil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$otil_text_5)) {info$otil_text_5}`
+`r if(!is_empty(info$otil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_5)) {knitr::include_graphics(info$otil_clip_5)}
+```
+`r if(!is_empty(info$otil_clip_5)) { "<br>" }`
+
+  <!-- Another Thing I Love -->
+`r if(!is_empty(info$atil_text_1)) {paste("**Another Thing I Love:**", info$atil_text_1, sep=" ")}`
+`r if(!is_empty(info$atil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_1)) {knitr::include_graphics(info$atil_clip_1)}
+```
+`r if(!is_empty(info$atil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$atil_text_2)) {info$atil_text_2}`
+`r if(!is_empty(info$atil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_2)) {knitr::include_graphics(info$atil_clip_2)}
+```
+`r if(!is_empty(info$atil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$atil_text_3)) {info$atil_text_3}`
+`r if(!is_empty(info$atil_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_3)) {knitr::include_graphics(info$atil_clip_3)}
+```
+`r if(!is_empty(info$atil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$atil_text_4)) {info$atil_text_4}`
+`r if(!is_empty(info$atil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
+```
+`r if(!is_empty(info$atil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$atil_text_5)) {info$atil_text_5}`
+`r if(!is_empty(info$atil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_5)) {knitr::include_graphics(info$atil_clip_5)}
+```
+`r if(!is_empty(info$atil_clip_5)) { "<br>" }`
+  
+<!-- Swing Skill -->
+`r if(!is_empty(info$ss_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
+`r if(!is_empty(info$ss_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_1)) {knitr::include_graphics(info$ss_clip_1)}
+```
+`r if(!is_empty(info$ss_clip_1)) { "<br>" }`
+`r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
+`r if(!is_empty(info$ss_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_2)) {knitr::include_graphics(info$ss_clip_2)}
+```
+`r if(!is_empty(info$ss_clip_2)) { "<br>" }`
+`r if(!is_empty(info$ss_text_3)) {info$ss_text_3}`
+`r if(!is_empty(info$ss_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_3)) {knitr::include_graphics(info$ss_clip_3)}
+```
+`r if(!is_empty(info$ss_clip_3)) { "<br>" }`
+`r if(!is_empty(info$ss_text_4)) {info$ss_text_4}`
+`r if(!is_empty(info$ss_text_4)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_4)) {knitr::include_graphics(info$ss_clip_4)}
+```
+`r if(!is_empty(info$ss_clip_4)) { "<br>" }`
+`r if(!is_empty(info$ss_text_5)) {info$ss_text_5}`
+`r if(!is_empty(info$ss_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_5)) {knitr::include_graphics(info$ss_clip_5)}
+```
+`r if(!is_empty(info$ss_clip_5)) { "<br>" }`
+`r if(!is_empty(info$ss_text_6)) {info$ss_text_6}`
+`r if(!is_empty(info$ss_text_6)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_6)) {knitr::include_graphics(info$ss_clip_6)}
+```
+`r if(!is_empty(info$ss_clip_6)) { "<br>" }`
+`r if(!is_empty(info$ss_text_7)) {info$ss_text_7}`
+`r if(!is_empty(info$ss_text_7)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_7)) {knitr::include_graphics(info$ss_clip_7)}
+```
+`r if(!is_empty(info$ss_clip_7)) { "<br>" }`
+`r if(!is_empty(info$ss_text_8)) {info$ss_text_8}`
+`r if(!is_empty(info$ss_text_8)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_8)) {knitr::include_graphics(info$ss_clip_8)}
+```
+`r if(!is_empty(info$ss_clip_8)) { "<br>" }`
+`r if(!is_empty(info$ss_text_9)) {info$ss_text_9}`
+`r if(!is_empty(info$ss_text_9)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_9)) {knitr::include_graphics(info$ss_clip_9)}
+```
+`r if(!is_empty(info$ss_clip_9)) { "<br>" }`
+`r if(!is_empty(info$ss_text_10)) {info$ss_text_10}`
+`r if(!is_empty(info$ss_text_10)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_10)) {knitr::include_graphics(info$ss_clip_10)}
+```
+`r if(!is_empty(info$ss_clip_10)) { "<br>" }`
+  
+<!-- Development -->
+`r if(!is_empty(info$dev_text_1)) {paste("**Development:**", info$dev_text_1, sep=" ")}`
+`r if(!is_empty(info$dev_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_1)) {knitr::include_graphics(info$dev_clip_1)}
+```
+`r if(!is_empty(info$dev_clip_1)) { "<br>" }`
+`r if(!is_empty(info$dev_text_2)) {info$dev_text_2}`
+`r if(!is_empty(info$dev_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_2)) {knitr::include_graphics(info$dev_clip_2)}
+```
+`r if(!is_empty(info$dev_clip_2)) { "<br>" }`
+`r if(!is_empty(info$dev_text_3)) {info$dev_text_3}`
+`r if(!is_empty(info$dev_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_3)) {knitr::include_graphics(info$dev_clip_3)}
+```
+`r if(!is_empty(info$dev_clip_3)) { "<br>" }`
+`r if(!is_empty(info$dev_text_4)) {info$dev_text_4}`
+`r if(!is_empty(info$dev_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_4)) {knitr::include_graphics(info$dev_clip_4)}
+```
+`r if(!is_empty(info$dev_clip_4)) { "<br>" }`
+`r if(!is_empty(info$dev_text_5)) {info$dev_text_5}`
+`r if(!is_empty(info$dev_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
+```
+`r if(!is_empty(info$dev_clip_5)) { "<br>" }`
+  
+<!-- Projection -->
+**Projection:**
+<br>
+`r if(!is_empty(info$top_end_proj)) {paste("*Top-end:*", info$top_end_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$mid_level_proj)) {paste("*Mid-level:*", info$mid_level_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$low_end_proj)) {paste("*Low-end:*", info$low_end_proj, sep=" ")}`
+
+<!-- Methodology -->
+**Methodology:**
+<br>
+`r if(!is_empty(info$methodology_1)) {info$methodology_1}`
+```{r}
+if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
+```
+`r if(!is_empty(info$methodology_2)) {info$methodology_2}`
+
+<!-- Related -->
+`r if(!is_empty(info$related_1)) {"**Related**"}`
+`r if(!is_empty(info$related_1)) {"<br>"}`
+`r if(!is_empty(info$related_1)) {paste("•", paste(paste("[", paste(info$rel_text_1, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_2)) {"<br>"}`
+`r if(!is_empty(info$related_2)) {paste("•", paste(paste("[", paste(info$rel_text_2, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_3)) {"<br>"}`
+`r if(!is_empty(info$related_3)) {paste("•", paste(paste("[", paste(info$rel_text_3, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+
+</div>
+</div>
+
+**14. Sean Behrens, LHD, USA U18 (NTDP)**
+```{r echo=FALSE }
+htmltools::includeHTML("C:\\Users\\ellis\\Desktop\\site-draftlook\\Cards\\SBehrens.html")
+```
+
+```{r echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+library(linguisticsdown)
+
+url <- "https://docs.google.com/spreadsheets/d/15LQi8UZ41jR6bq6MLIGyjRSagLMigFaDl0hgeH2UpWc/edit?usp=sharing"
+info <- rio::import(file = url,which = 2)
+info <- clean_names(info)
+
+info <- mutate_all(info, funs(str_replace(., "â€™", "'")))
+
+info <- subset(info, player_name == "Sean Behrens")
+```
+
+<div class="prftext" style="font-family: Lucida Console, monospace; margin-left: -0%;">
+<!-- One Thing I Love -->
+<hr class="break" style="border:1px solid black"> </hr>
+**One Thing I Love**: `r if(!is_empty(info$otil_text_1)) {info$otil_text_1}`
+`r if(!is_empty(info$otil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_1)) {knitr::include_graphics(info$otil_clip_1)}
+```
+`r if(!is_empty(info$otil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$otil_text_2)) {info$otil_text_2}`
+`r if(!is_empty(info$otil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_2)) {knitr::include_graphics(info$otil_clip_2)}
+```
+`r if(!is_empty(info$otil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$otil_text_3)) {info$otil_text_3}`
+`r if(!is_empty(info$otil_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_3)) {knitr::include_graphics(info$otil_clip_3)}
+```
+`r if(!is_empty(info$otil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$otil_text_4)) {info$otil_text_4}`
+`r if(!is_empty(info$otil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_4)) {knitr::include_graphics(info$otil_clip_4)}
+```
+`r if(!is_empty(info$otil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$otil_text_5)) {info$otil_text_5}`
+`r if(!is_empty(info$otil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_5)) {knitr::include_graphics(info$otil_clip_5)}
+```
+`r if(!is_empty(info$otil_clip_5)) { "<br>" }`
+
+  <!-- Another Thing I Love -->
+`r if(!is_empty(info$atil_text_1)) {paste("**Another Thing I Love:**", info$atil_text_1, sep=" ")}`
+`r if(!is_empty(info$atil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_1)) {knitr::include_graphics(info$atil_clip_1)}
+```
+`r if(!is_empty(info$atil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$atil_text_2)) {info$atil_text_2}`
+`r if(!is_empty(info$atil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_2)) {knitr::include_graphics(info$atil_clip_2)}
+```
+`r if(!is_empty(info$atil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$atil_text_3)) {info$atil_text_3}`
+`r if(!is_empty(info$atil_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_3)) {knitr::include_graphics(info$atil_clip_3)}
+```
+`r if(!is_empty(info$atil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$atil_text_4)) {info$atil_text_4}`
+`r if(!is_empty(info$atil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
+```
+`r if(!is_empty(info$atil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$atil_text_5)) {info$atil_text_5}`
+`r if(!is_empty(info$atil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_5)) {knitr::include_graphics(info$atil_clip_5)}
+```
+`r if(!is_empty(info$atil_clip_5)) { "<br>" }`
+  
+<!-- Swing Skill -->
+`r if(!is_empty(info$ss_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
+`r if(!is_empty(info$ss_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_1)) {knitr::include_graphics(info$ss_clip_1)}
+```
+`r if(!is_empty(info$ss_clip_1)) { "<br>" }`
+`r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
+`r if(!is_empty(info$ss_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_2)) {knitr::include_graphics(info$ss_clip_2)}
+```
+`r if(!is_empty(info$ss_clip_2)) { "<br>" }`
+`r if(!is_empty(info$ss_text_3)) {info$ss_text_3}`
+`r if(!is_empty(info$ss_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_3)) {knitr::include_graphics(info$ss_clip_3)}
+```
+`r if(!is_empty(info$ss_clip_3)) { "<br>" }`
+`r if(!is_empty(info$ss_text_4)) {info$ss_text_4}`
+`r if(!is_empty(info$ss_text_4)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_4)) {knitr::include_graphics(info$ss_clip_4)}
+```
+`r if(!is_empty(info$ss_clip_4)) { "<br>" }`
+`r if(!is_empty(info$ss_text_5)) {info$ss_text_5}`
+`r if(!is_empty(info$ss_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_5)) {knitr::include_graphics(info$ss_clip_5)}
+```
+`r if(!is_empty(info$ss_clip_5)) { "<br>" }`
+`r if(!is_empty(info$ss_text_6)) {info$ss_text_6}`
+`r if(!is_empty(info$ss_text_6)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_6)) {knitr::include_graphics(info$ss_clip_6)}
+```
+`r if(!is_empty(info$ss_clip_6)) { "<br>" }`
+`r if(!is_empty(info$ss_text_7)) {info$ss_text_7}`
+`r if(!is_empty(info$ss_text_7)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_7)) {knitr::include_graphics(info$ss_clip_7)}
+```
+`r if(!is_empty(info$ss_clip_7)) { "<br>" }`
+`r if(!is_empty(info$ss_text_8)) {info$ss_text_8}`
+`r if(!is_empty(info$ss_text_8)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_8)) {knitr::include_graphics(info$ss_clip_8)}
+```
+`r if(!is_empty(info$ss_clip_8)) { "<br>" }`
+`r if(!is_empty(info$ss_text_9)) {info$ss_text_9}`
+`r if(!is_empty(info$ss_text_9)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_9)) {knitr::include_graphics(info$ss_clip_9)}
+```
+`r if(!is_empty(info$ss_clip_9)) { "<br>" }`
+`r if(!is_empty(info$ss_text_10)) {info$ss_text_10}`
+`r if(!is_empty(info$ss_text_10)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_10)) {knitr::include_graphics(info$ss_clip_10)}
+```
+`r if(!is_empty(info$ss_clip_10)) { "<br>" }`
+  
+<!-- Development -->
+`r if(!is_empty(info$dev_text_1)) {paste("**Development:**", info$dev_text_1, sep=" ")}`
+`r if(!is_empty(info$dev_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_1)) {knitr::include_graphics(info$dev_clip_1)}
+```
+`r if(!is_empty(info$dev_clip_1)) { "<br>" }`
+`r if(!is_empty(info$dev_text_2)) {info$dev_text_2}`
+`r if(!is_empty(info$dev_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_2)) {knitr::include_graphics(info$dev_clip_2)}
+```
+`r if(!is_empty(info$dev_clip_2)) { "<br>" }`
+`r if(!is_empty(info$dev_text_3)) {info$dev_text_3}`
+`r if(!is_empty(info$dev_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_3)) {knitr::include_graphics(info$dev_clip_3)}
+```
+`r if(!is_empty(info$dev_clip_3)) { "<br>" }`
+`r if(!is_empty(info$dev_text_4)) {info$dev_text_4}`
+`r if(!is_empty(info$dev_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_4)) {knitr::include_graphics(info$dev_clip_4)}
+```
+`r if(!is_empty(info$dev_clip_4)) { "<br>" }`
+`r if(!is_empty(info$dev_text_5)) {info$dev_text_5}`
+`r if(!is_empty(info$dev_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
+```
+`r if(!is_empty(info$dev_clip_5)) { "<br>" }`
+  
+<!-- Projection -->
+**Projection:**
+<br>
+`r if(!is_empty(info$top_end_proj)) {paste("*Top-end:*", info$top_end_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$mid_level_proj)) {paste("*Mid-level:*", info$mid_level_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$low_end_proj)) {paste("*Low-end:*", info$low_end_proj, sep=" ")}`
+
+<!-- Methodology -->
+**Methodology:**
+<br>
+`r if(!is_empty(info$methodology_1)) {info$methodology_1}`
+```{r}
+if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
+```
+`r if(!is_empty(info$methodology_2)) {info$methodology_2}`
+
+<!-- Related -->
+`r if(!is_empty(info$related_1)) {"**Related**"}`
+`r if(!is_empty(info$related_1)) {"<br>"}`
+`r if(!is_empty(info$related_1)) {paste("•", paste(paste("[", paste(info$rel_text_1, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_2)) {"<br>"}`
+`r if(!is_empty(info$related_2)) {paste("•", paste(paste("[", paste(info$rel_text_2, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_3)) {"<br>"}`
+`r if(!is_empty(info$related_3)) {paste("•", paste(paste("[", paste(info$rel_text_3, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+
+</div>
+</div>
+
+**10. Chaz Lucius, LHC, USA U18 (NTDP)**
+```{r echo=FALSE }
+htmltools::includeHTML("C:\\Users\\ellis\\Desktop\\site-draftlook\\Cards\\CLucius.html")
+```
+
+```{r echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+library(linguisticsdown)
+
+url <- "https://docs.google.com/spreadsheets/d/15LQi8UZ41jR6bq6MLIGyjRSagLMigFaDl0hgeH2UpWc/edit?usp=sharing"
+info <- rio::import(file = url,which = 2)
+info <- clean_names(info)
+
+info <- mutate_all(info, funs(str_replace(., "â€™", "'")))
+
+info <- subset(info, player_name == "Chaz Lucius")
+```
+
+<div class="prftext" style="font-family: Lucida Console, monospace; margin-left: -0%;">
+<!-- One Thing I Love -->
+<hr class="break" style="border:1px solid black"> </hr>
+**One Thing I Love**: `r if(!is_empty(info$otil_text_1)) {info$otil_text_1}`
+`r if(!is_empty(info$otil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_1)) {knitr::include_graphics(info$otil_clip_1)}
+```
+`r if(!is_empty(info$otil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$otil_text_2)) {info$otil_text_2}`
+`r if(!is_empty(info$otil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_2)) {knitr::include_graphics(info$otil_clip_2)}
+```
+`r if(!is_empty(info$otil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$otil_text_3)) {info$otil_text_3}`
+`r if(!is_empty(info$otil_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_3)) {knitr::include_graphics(info$otil_clip_3)}
+```
+`r if(!is_empty(info$otil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$otil_text_4)) {info$otil_text_4}`
+`r if(!is_empty(info$otil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_4)) {knitr::include_graphics(info$otil_clip_4)}
+```
+`r if(!is_empty(info$otil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$otil_text_5)) {info$otil_text_5}`
+`r if(!is_empty(info$otil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_5)) {knitr::include_graphics(info$otil_clip_5)}
+```
+`r if(!is_empty(info$otil_clip_5)) { "<br>" }`
+
+  <!-- Another Thing I Love -->
+`r if(!is_empty(info$atil_text_1)) {paste("**Another Thing I Love:**", info$atil_text_1, sep=" ")}`
+`r if(!is_empty(info$atil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_1)) {knitr::include_graphics(info$atil_clip_1)}
+```
+`r if(!is_empty(info$atil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$atil_text_2)) {info$atil_text_2}`
+`r if(!is_empty(info$atil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_2)) {knitr::include_graphics(info$atil_clip_2)}
+```
+`r if(!is_empty(info$atil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$atil_text_3)) {info$atil_text_3}`
+`r if(!is_empty(info$atil_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_3)) {knitr::include_graphics(info$atil_clip_3)}
+```
+`r if(!is_empty(info$atil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$atil_text_4)) {info$atil_text_4}`
+`r if(!is_empty(info$atil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
+```
+`r if(!is_empty(info$atil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$atil_text_5)) {info$atil_text_5}`
+`r if(!is_empty(info$atil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_5)) {knitr::include_graphics(info$atil_clip_5)}
+```
+`r if(!is_empty(info$atil_clip_5)) { "<br>" }`
+  
+<!-- Swing Skill -->
+`r if(!is_empty(info$ss_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
+`r if(!is_empty(info$ss_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_1)) {knitr::include_graphics(info$ss_clip_1)}
+```
+`r if(!is_empty(info$ss_clip_1)) { "<br>" }`
+`r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
+`r if(!is_empty(info$ss_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_2)) {knitr::include_graphics(info$ss_clip_2)}
+```
+`r if(!is_empty(info$ss_clip_2)) { "<br>" }`
+`r if(!is_empty(info$ss_text_3)) {info$ss_text_3}`
+`r if(!is_empty(info$ss_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_3)) {knitr::include_graphics(info$ss_clip_3)}
+```
+`r if(!is_empty(info$ss_clip_3)) { "<br>" }`
+`r if(!is_empty(info$ss_text_4)) {info$ss_text_4}`
+`r if(!is_empty(info$ss_text_4)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_4)) {knitr::include_graphics(info$ss_clip_4)}
+```
+`r if(!is_empty(info$ss_clip_4)) { "<br>" }`
+`r if(!is_empty(info$ss_text_5)) {info$ss_text_5}`
+`r if(!is_empty(info$ss_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_5)) {knitr::include_graphics(info$ss_clip_5)}
+```
+`r if(!is_empty(info$ss_clip_5)) { "<br>" }`
+`r if(!is_empty(info$ss_text_6)) {info$ss_text_6}`
+`r if(!is_empty(info$ss_text_6)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_6)) {knitr::include_graphics(info$ss_clip_6)}
+```
+`r if(!is_empty(info$ss_clip_6)) { "<br>" }`
+`r if(!is_empty(info$ss_text_7)) {info$ss_text_7}`
+`r if(!is_empty(info$ss_text_7)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_7)) {knitr::include_graphics(info$ss_clip_7)}
+```
+`r if(!is_empty(info$ss_clip_7)) { "<br>" }`
+`r if(!is_empty(info$ss_text_8)) {info$ss_text_8}`
+`r if(!is_empty(info$ss_text_8)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_8)) {knitr::include_graphics(info$ss_clip_8)}
+```
+`r if(!is_empty(info$ss_clip_8)) { "<br>" }`
+`r if(!is_empty(info$ss_text_9)) {info$ss_text_9}`
+`r if(!is_empty(info$ss_text_9)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_9)) {knitr::include_graphics(info$ss_clip_9)}
+```
+`r if(!is_empty(info$ss_clip_9)) { "<br>" }`
+`r if(!is_empty(info$ss_text_10)) {info$ss_text_10}`
+`r if(!is_empty(info$ss_text_10)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_10)) {knitr::include_graphics(info$ss_clip_10)}
+```
+`r if(!is_empty(info$ss_clip_10)) { "<br>" }`
+  
+<!-- Development -->
+`r if(!is_empty(info$dev_text_1)) {paste("**Development:**", info$dev_text_1, sep=" ")}`
+`r if(!is_empty(info$dev_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_1)) {knitr::include_graphics(info$dev_clip_1)}
+```
+`r if(!is_empty(info$dev_clip_1)) { "<br>" }`
+`r if(!is_empty(info$dev_text_2)) {info$dev_text_2}`
+`r if(!is_empty(info$dev_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_2)) {knitr::include_graphics(info$dev_clip_2)}
+```
+`r if(!is_empty(info$dev_clip_2)) { "<br>" }`
+`r if(!is_empty(info$dev_text_3)) {info$dev_text_3}`
+`r if(!is_empty(info$dev_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_3)) {knitr::include_graphics(info$dev_clip_3)}
+```
+`r if(!is_empty(info$dev_clip_3)) { "<br>" }`
+`r if(!is_empty(info$dev_text_4)) {info$dev_text_4}`
+`r if(!is_empty(info$dev_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_4)) {knitr::include_graphics(info$dev_clip_4)}
+```
+`r if(!is_empty(info$dev_clip_4)) { "<br>" }`
+`r if(!is_empty(info$dev_text_5)) {info$dev_text_5}`
+`r if(!is_empty(info$dev_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
+```
+`r if(!is_empty(info$dev_clip_5)) { "<br>" }`
+  
+<!-- Projection -->
+**Projection:**
+<br>
+`r if(!is_empty(info$top_end_proj)) {paste("*Top-end:*", info$top_end_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$mid_level_proj)) {paste("*Mid-level:*", info$mid_level_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$low_end_proj)) {paste("*Low-end:*", info$low_end_proj, sep=" ")}`
+
+<!-- Methodology -->
+**Methodology:**
+<br>
+`r if(!is_empty(info$methodology_1)) {info$methodology_1}`
+```{r}
+if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
+```
+`r if(!is_empty(info$methodology_2)) {info$methodology_2}`
+
+<!-- Related -->
+`r if(!is_empty(info$related_1)) {"**Related**"}`
+`r if(!is_empty(info$related_1)) {"<br>"}`
+`r if(!is_empty(info$related_1)) {paste("•", paste(paste("[", paste(info$rel_text_1, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_2)) {"<br>"}`
+`r if(!is_empty(info$related_2)) {paste("•", paste(paste("[", paste(info$rel_text_2, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_3)) {"<br>"}`
+`r if(!is_empty(info$related_3)) {paste("•", paste(paste("[", paste(info$rel_text_3, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+
+</div>
+</div>
+
+**16. Fabian Lysell, RW, Lulea HF (SHL)**
+```{r echo=FALSE }
+htmltools::includeHTML("C:\\Users\\ellis\\Desktop\\site-draftlook\\Cards\\FLysell.html")
+```
+
+```{r echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+library(linguisticsdown)
+
+url <- "https://docs.google.com/spreadsheets/d/15LQi8UZ41jR6bq6MLIGyjRSagLMigFaDl0hgeH2UpWc/edit?usp=sharing"
+info <- rio::import(file = url,which = 2)
+info <- clean_names(info)
+
+info <- mutate_all(info, funs(str_replace(., "â€™", "'")))
+
+info <- subset(info, player_name == "Fabian Lysell")
+```
+
+<div class="prftext" style="font-family: Lucida Console, monospace; margin-left: -0%;">
+<!-- One Thing I Love -->
+<hr class="break" style="border:1px solid black"> </hr>
+**One Thing I Love**: `r if(!is_empty(info$otil_text_1)) {info$otil_text_1}`
+`r if(!is_empty(info$otil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_1)) {knitr::include_graphics(info$otil_clip_1)}
+```
+`r if(!is_empty(info$otil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$otil_text_2)) {info$otil_text_2}`
+`r if(!is_empty(info$otil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_2)) {knitr::include_graphics(info$otil_clip_2)}
+```
+`r if(!is_empty(info$otil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$otil_text_3)) {info$otil_text_3}`
+`r if(!is_empty(info$otil_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_3)) {knitr::include_graphics(info$otil_clip_3)}
+```
+`r if(!is_empty(info$otil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$otil_text_4)) {info$otil_text_4}`
+`r if(!is_empty(info$otil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_4)) {knitr::include_graphics(info$otil_clip_4)}
+```
+`r if(!is_empty(info$otil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$otil_text_5)) {info$otil_text_5}`
+`r if(!is_empty(info$otil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_5)) {knitr::include_graphics(info$otil_clip_5)}
+```
+`r if(!is_empty(info$otil_clip_5)) { "<br>" }`
+
+  <!-- Another Thing I Love -->
+`r if(!is_empty(info$atil_text_1)) {paste("**Another Thing I Love:**", info$atil_text_1, sep=" ")}`
+`r if(!is_empty(info$atil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_1)) {knitr::include_graphics(info$atil_clip_1)}
+```
+`r if(!is_empty(info$atil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$atil_text_2)) {info$atil_text_2}`
+`r if(!is_empty(info$atil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_2)) {knitr::include_graphics(info$atil_clip_2)}
+```
+`r if(!is_empty(info$atil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$atil_text_3)) {info$atil_text_3}`
+`r if(!is_empty(info$atil_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_3)) {knitr::include_graphics(info$atil_clip_3)}
+```
+`r if(!is_empty(info$atil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$atil_text_4)) {info$atil_text_4}`
+`r if(!is_empty(info$atil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
+```
+`r if(!is_empty(info$atil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$atil_text_5)) {info$atil_text_5}`
+`r if(!is_empty(info$atil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_5)) {knitr::include_graphics(info$atil_clip_5)}
+```
+`r if(!is_empty(info$atil_clip_5)) { "<br>" }`
+  
+<!-- Swing Skill -->
+`r if(!is_empty(info$ss_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
+`r if(!is_empty(info$ss_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_1)) {knitr::include_graphics(info$ss_clip_1)}
+```
+`r if(!is_empty(info$ss_clip_1)) { "<br>" }`
+`r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
+`r if(!is_empty(info$ss_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_2)) {knitr::include_graphics(info$ss_clip_2)}
+```
+`r if(!is_empty(info$ss_clip_2)) { "<br>" }`
+`r if(!is_empty(info$ss_text_3)) {info$ss_text_3}`
+`r if(!is_empty(info$ss_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_3)) {knitr::include_graphics(info$ss_clip_3)}
+```
+`r if(!is_empty(info$ss_clip_3)) { "<br>" }`
+`r if(!is_empty(info$ss_text_4)) {info$ss_text_4}`
+`r if(!is_empty(info$ss_text_4)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_4)) {knitr::include_graphics(info$ss_clip_4)}
+```
+`r if(!is_empty(info$ss_clip_4)) { "<br>" }`
+`r if(!is_empty(info$ss_text_5)) {info$ss_text_5}`
+`r if(!is_empty(info$ss_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_5)) {knitr::include_graphics(info$ss_clip_5)}
+```
+`r if(!is_empty(info$ss_clip_5)) { "<br>" }`
+`r if(!is_empty(info$ss_text_6)) {info$ss_text_6}`
+`r if(!is_empty(info$ss_text_6)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_6)) {knitr::include_graphics(info$ss_clip_6)}
+```
+`r if(!is_empty(info$ss_clip_6)) { "<br>" }`
+`r if(!is_empty(info$ss_text_7)) {info$ss_text_7}`
+`r if(!is_empty(info$ss_text_7)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_7)) {knitr::include_graphics(info$ss_clip_7)}
+```
+`r if(!is_empty(info$ss_clip_7)) { "<br>" }`
+`r if(!is_empty(info$ss_text_8)) {info$ss_text_8}`
+`r if(!is_empty(info$ss_text_8)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_8)) {knitr::include_graphics(info$ss_clip_8)}
+```
+`r if(!is_empty(info$ss_clip_8)) { "<br>" }`
+`r if(!is_empty(info$ss_text_9)) {info$ss_text_9}`
+`r if(!is_empty(info$ss_text_9)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_9)) {knitr::include_graphics(info$ss_clip_9)}
+```
+`r if(!is_empty(info$ss_clip_9)) { "<br>" }`
+`r if(!is_empty(info$ss_text_10)) {info$ss_text_10}`
+`r if(!is_empty(info$ss_text_10)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_10)) {knitr::include_graphics(info$ss_clip_10)}
+```
+`r if(!is_empty(info$ss_clip_10)) { "<br>" }`
+  
+<!-- Development -->
+`r if(!is_empty(info$dev_text_1)) {paste("**Development:**", info$dev_text_1, sep=" ")}`
+`r if(!is_empty(info$dev_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_1)) {knitr::include_graphics(info$dev_clip_1)}
+```
+`r if(!is_empty(info$dev_clip_1)) { "<br>" }`
+`r if(!is_empty(info$dev_text_2)) {info$dev_text_2}`
+`r if(!is_empty(info$dev_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_2)) {knitr::include_graphics(info$dev_clip_2)}
+```
+`r if(!is_empty(info$dev_clip_2)) { "<br>" }`
+`r if(!is_empty(info$dev_text_3)) {info$dev_text_3}`
+`r if(!is_empty(info$dev_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_3)) {knitr::include_graphics(info$dev_clip_3)}
+```
+`r if(!is_empty(info$dev_clip_3)) { "<br>" }`
+`r if(!is_empty(info$dev_text_4)) {info$dev_text_4}`
+`r if(!is_empty(info$dev_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_4)) {knitr::include_graphics(info$dev_clip_4)}
+```
+`r if(!is_empty(info$dev_clip_4)) { "<br>" }`
+`r if(!is_empty(info$dev_text_5)) {info$dev_text_5}`
+`r if(!is_empty(info$dev_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
+```
+`r if(!is_empty(info$dev_clip_5)) { "<br>" }`
+  
+<!-- Projection -->
+**Projection:**
+<br>
+`r if(!is_empty(info$top_end_proj)) {paste("*Top-end:*", info$top_end_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$mid_level_proj)) {paste("*Mid-level:*", info$mid_level_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$low_end_proj)) {paste("*Low-end:*", info$low_end_proj, sep=" ")}`
+
+<!-- Methodology -->
+**Methodology:**
+<br>
+`r if(!is_empty(info$methodology_1)) {info$methodology_1}`
+```{r}
+if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
+```
+`r if(!is_empty(info$methodology_2)) {info$methodology_2}`
+
+<!-- Related -->
+`r if(!is_empty(info$related_1)) {"**Related**"}`
+`r if(!is_empty(info$related_1)) {"<br>"}`
+`r if(!is_empty(info$related_1)) {paste("•", paste(paste("[", paste(info$rel_text_1, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_2)) {"<br>"}`
+`r if(!is_empty(info$related_2)) {paste("•", paste(paste("[", paste(info$rel_text_2, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_3)) {"<br>"}`
+`r if(!is_empty(info$related_3)) {paste("•", paste(paste("[", paste(info$rel_text_3, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+
+</div>
+</div>
+
+**17. Fyodor Svechkov, LHC, Lada Togliatti (VHL)**
+```{r echo=FALSE }
+htmltools::includeHTML("C:\\Users\\ellis\\Desktop\\site-draftlook\\Cards\\FSvechkov.html")
+```
+
+```{r echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+library(linguisticsdown)
+
+url <- "https://docs.google.com/spreadsheets/d/15LQi8UZ41jR6bq6MLIGyjRSagLMigFaDl0hgeH2UpWc/edit?usp=sharing"
+info <- rio::import(file = url,which = 2)
+info <- clean_names(info)
+
+info <- mutate_all(info, funs(str_replace(., "â€™", "'")))
+
+info <- subset(info, player_name == "Fyodor Svechkov")
+```
+
+<div class="prftext" style="font-family: Lucida Console, monospace; margin-left: -0%;">
+<!-- One Thing I Love -->
+<hr class="break" style="border:1px solid black"> </hr>
+**One Thing I Love**: `r if(!is_empty(info$otil_text_1)) {info$otil_text_1}`
+`r if(!is_empty(info$otil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_1)) {knitr::include_graphics(info$otil_clip_1)}
+```
+`r if(!is_empty(info$otil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$otil_text_2)) {info$otil_text_2}`
+`r if(!is_empty(info$otil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_2)) {knitr::include_graphics(info$otil_clip_2)}
+```
+`r if(!is_empty(info$otil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$otil_text_3)) {info$otil_text_3}`
+`r if(!is_empty(info$otil_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_3)) {knitr::include_graphics(info$otil_clip_3)}
+```
+`r if(!is_empty(info$otil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$otil_text_4)) {info$otil_text_4}`
+`r if(!is_empty(info$otil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_4)) {knitr::include_graphics(info$otil_clip_4)}
+```
+`r if(!is_empty(info$otil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$otil_text_5)) {info$otil_text_5}`
+`r if(!is_empty(info$otil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_5)) {knitr::include_graphics(info$otil_clip_5)}
+```
+`r if(!is_empty(info$otil_clip_5)) { "<br>" }`
+
+  <!-- Another Thing I Love -->
+`r if(!is_empty(info$atil_text_1)) {paste("**Another Thing I Love:**", info$atil_text_1, sep=" ")}`
+`r if(!is_empty(info$atil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_1)) {knitr::include_graphics(info$atil_clip_1)}
+```
+`r if(!is_empty(info$atil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$atil_text_2)) {info$atil_text_2}`
+`r if(!is_empty(info$atil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_2)) {knitr::include_graphics(info$atil_clip_2)}
+```
+`r if(!is_empty(info$atil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$atil_text_3)) {info$atil_text_3}`
+`r if(!is_empty(info$atil_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_3)) {knitr::include_graphics(info$atil_clip_3)}
+```
+`r if(!is_empty(info$atil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$atil_text_4)) {info$atil_text_4}`
+`r if(!is_empty(info$atil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
+```
+`r if(!is_empty(info$atil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$atil_text_5)) {info$atil_text_5}`
+`r if(!is_empty(info$atil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_5)) {knitr::include_graphics(info$atil_clip_5)}
+```
+`r if(!is_empty(info$atil_clip_5)) { "<br>" }`
+  
+<!-- Swing Skill -->
+`r if(!is_empty(info$ss_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
+`r if(!is_empty(info$ss_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_1)) {knitr::include_graphics(info$ss_clip_1)}
+```
+`r if(!is_empty(info$ss_clip_1)) { "<br>" }`
+`r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
+`r if(!is_empty(info$ss_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_2)) {knitr::include_graphics(info$ss_clip_2)}
+```
+`r if(!is_empty(info$ss_clip_2)) { "<br>" }`
+`r if(!is_empty(info$ss_text_3)) {info$ss_text_3}`
+`r if(!is_empty(info$ss_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_3)) {knitr::include_graphics(info$ss_clip_3)}
+```
+`r if(!is_empty(info$ss_clip_3)) { "<br>" }`
+`r if(!is_empty(info$ss_text_4)) {info$ss_text_4}`
+`r if(!is_empty(info$ss_text_4)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_4)) {knitr::include_graphics(info$ss_clip_4)}
+```
+`r if(!is_empty(info$ss_clip_4)) { "<br>" }`
+`r if(!is_empty(info$ss_text_5)) {info$ss_text_5}`
+`r if(!is_empty(info$ss_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_5)) {knitr::include_graphics(info$ss_clip_5)}
+```
+`r if(!is_empty(info$ss_clip_5)) { "<br>" }`
+`r if(!is_empty(info$ss_text_6)) {info$ss_text_6}`
+`r if(!is_empty(info$ss_text_6)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_6)) {knitr::include_graphics(info$ss_clip_6)}
+```
+`r if(!is_empty(info$ss_clip_6)) { "<br>" }`
+`r if(!is_empty(info$ss_text_7)) {info$ss_text_7}`
+`r if(!is_empty(info$ss_text_7)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_7)) {knitr::include_graphics(info$ss_clip_7)}
+```
+`r if(!is_empty(info$ss_clip_7)) { "<br>" }`
+`r if(!is_empty(info$ss_text_8)) {info$ss_text_8}`
+`r if(!is_empty(info$ss_text_8)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_8)) {knitr::include_graphics(info$ss_clip_8)}
+```
+`r if(!is_empty(info$ss_clip_8)) { "<br>" }`
+`r if(!is_empty(info$ss_text_9)) {info$ss_text_9}`
+`r if(!is_empty(info$ss_text_9)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_9)) {knitr::include_graphics(info$ss_clip_9)}
+```
+`r if(!is_empty(info$ss_clip_9)) { "<br>" }`
+`r if(!is_empty(info$ss_text_10)) {info$ss_text_10}`
+`r if(!is_empty(info$ss_text_10)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_10)) {knitr::include_graphics(info$ss_clip_10)}
+```
+`r if(!is_empty(info$ss_clip_10)) { "<br>" }`
+  
+<!-- Development -->
+`r if(!is_empty(info$dev_text_1)) {paste("**Development:**", info$dev_text_1, sep=" ")}`
+`r if(!is_empty(info$dev_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_1)) {knitr::include_graphics(info$dev_clip_1)}
+```
+`r if(!is_empty(info$dev_clip_1)) { "<br>" }`
+`r if(!is_empty(info$dev_text_2)) {info$dev_text_2}`
+`r if(!is_empty(info$dev_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_2)) {knitr::include_graphics(info$dev_clip_2)}
+```
+`r if(!is_empty(info$dev_clip_2)) { "<br>" }`
+`r if(!is_empty(info$dev_text_3)) {info$dev_text_3}`
+`r if(!is_empty(info$dev_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_3)) {knitr::include_graphics(info$dev_clip_3)}
+```
+`r if(!is_empty(info$dev_clip_3)) { "<br>" }`
+`r if(!is_empty(info$dev_text_4)) {info$dev_text_4}`
+`r if(!is_empty(info$dev_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_4)) {knitr::include_graphics(info$dev_clip_4)}
+```
+`r if(!is_empty(info$dev_clip_4)) { "<br>" }`
+`r if(!is_empty(info$dev_text_5)) {info$dev_text_5}`
+`r if(!is_empty(info$dev_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
+```
+`r if(!is_empty(info$dev_clip_5)) { "<br>" }`
+  
+<!-- Projection -->
+**Projection:**
+<br>
+`r if(!is_empty(info$top_end_proj)) {paste("*Top-end:*", info$top_end_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$mid_level_proj)) {paste("*Mid-level:*", info$mid_level_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$low_end_proj)) {paste("*Low-end:*", info$low_end_proj, sep=" ")}`
+
+<!-- Methodology -->
+**Methodology:**
+<br>
+`r if(!is_empty(info$methodology_1)) {info$methodology_1}`
+```{r}
+if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
+```
+`r if(!is_empty(info$methodology_2)) {info$methodology_2}`
+
+<!-- Related -->
+`r if(!is_empty(info$related_1)) {"**Related**"}`
+`r if(!is_empty(info$related_1)) {"<br>"}`
+`r if(!is_empty(info$related_1)) {paste("•", paste(paste("[", paste(info$rel_text_1, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_2)) {"<br>"}`
+`r if(!is_empty(info$related_2)) {paste("•", paste(paste("[", paste(info$rel_text_2, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_3)) {"<br>"}`
+`r if(!is_empty(info$related_3)) {paste("•", paste(paste("[", paste(info$rel_text_3, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+
+</div>
+</div>
+
+**18. Olen Zellweger, LHD, Everett Silvertips**
+```{r echo=FALSE }
+htmltools::includeHTML("C:\\Users\\ellis\\Desktop\\site-draftlook\\Cards\\OZellweger.html")
+```
+
+```{r echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+library(linguisticsdown)
+
+url <- "https://docs.google.com/spreadsheets/d/15LQi8UZ41jR6bq6MLIGyjRSagLMigFaDl0hgeH2UpWc/edit?usp=sharing"
+info <- rio::import(file = url,which = 2)
+info <- clean_names(info)
+
+info <- mutate_all(info, funs(str_replace(., "â€™", "'")))
+
+info <- subset(info, player_name == "Olen Zellweger")
+```
+
+<div class="prftext" style="font-family: Lucida Console, monospace; margin-left: -0%;">
+<!-- One Thing I Love -->
+<hr class="break" style="border:1px solid black"> </hr>
+**One Thing I Love**: `r if(!is_empty(info$otil_text_1)) {info$otil_text_1}`
+`r if(!is_empty(info$otil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_1)) {knitr::include_graphics(info$otil_clip_1)}
+```
+`r if(!is_empty(info$otil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$otil_text_2)) {info$otil_text_2}`
+`r if(!is_empty(info$otil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_2)) {knitr::include_graphics(info$otil_clip_2)}
+```
+`r if(!is_empty(info$otil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$otil_text_3)) {info$otil_text_3}`
+`r if(!is_empty(info$otil_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_3)) {knitr::include_graphics(info$otil_clip_3)}
+```
+`r if(!is_empty(info$otil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$otil_text_4)) {info$otil_text_4}`
+`r if(!is_empty(info$otil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_4)) {knitr::include_graphics(info$otil_clip_4)}
+```
+`r if(!is_empty(info$otil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$otil_text_5)) {info$otil_text_5}`
+`r if(!is_empty(info$otil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_5)) {knitr::include_graphics(info$otil_clip_5)}
+```
+`r if(!is_empty(info$otil_clip_5)) { "<br>" }`
+
+  <!-- Another Thing I Love -->
+`r if(!is_empty(info$atil_text_1)) {paste("**Another Thing I Love:**", info$atil_text_1, sep=" ")}`
+`r if(!is_empty(info$atil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_1)) {knitr::include_graphics(info$atil_clip_1)}
+```
+`r if(!is_empty(info$atil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$atil_text_2)) {info$atil_text_2}`
+`r if(!is_empty(info$atil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_2)) {knitr::include_graphics(info$atil_clip_2)}
+```
+`r if(!is_empty(info$atil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$atil_text_3)) {info$atil_text_3}`
+`r if(!is_empty(info$atil_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_3)) {knitr::include_graphics(info$atil_clip_3)}
+```
+`r if(!is_empty(info$atil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$atil_text_4)) {info$atil_text_4}`
+`r if(!is_empty(info$atil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
+```
+`r if(!is_empty(info$atil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$atil_text_5)) {info$atil_text_5}`
+`r if(!is_empty(info$atil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_5)) {knitr::include_graphics(info$atil_clip_5)}
+```
+`r if(!is_empty(info$atil_clip_5)) { "<br>" }`
+  
+<!-- Swing Skill -->
+`r if(!is_empty(info$ss_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
+`r if(!is_empty(info$ss_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_1)) {knitr::include_graphics(info$ss_clip_1)}
+```
+`r if(!is_empty(info$ss_clip_1)) { "<br>" }`
+`r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
+`r if(!is_empty(info$ss_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_2)) {knitr::include_graphics(info$ss_clip_2)}
+```
+`r if(!is_empty(info$ss_clip_2)) { "<br>" }`
+`r if(!is_empty(info$ss_text_3)) {info$ss_text_3}`
+`r if(!is_empty(info$ss_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_3)) {knitr::include_graphics(info$ss_clip_3)}
+```
+`r if(!is_empty(info$ss_clip_3)) { "<br>" }`
+`r if(!is_empty(info$ss_text_4)) {info$ss_text_4}`
+`r if(!is_empty(info$ss_text_4)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_4)) {knitr::include_graphics(info$ss_clip_4)}
+```
+`r if(!is_empty(info$ss_clip_4)) { "<br>" }`
+`r if(!is_empty(info$ss_text_5)) {info$ss_text_5}`
+`r if(!is_empty(info$ss_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_5)) {knitr::include_graphics(info$ss_clip_5)}
+```
+`r if(!is_empty(info$ss_clip_5)) { "<br>" }`
+`r if(!is_empty(info$ss_text_6)) {info$ss_text_6}`
+`r if(!is_empty(info$ss_text_6)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_6)) {knitr::include_graphics(info$ss_clip_6)}
+```
+`r if(!is_empty(info$ss_clip_6)) { "<br>" }`
+`r if(!is_empty(info$ss_text_7)) {info$ss_text_7}`
+`r if(!is_empty(info$ss_text_7)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_7)) {knitr::include_graphics(info$ss_clip_7)}
+```
+`r if(!is_empty(info$ss_clip_7)) { "<br>" }`
+`r if(!is_empty(info$ss_text_8)) {info$ss_text_8}`
+`r if(!is_empty(info$ss_text_8)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_8)) {knitr::include_graphics(info$ss_clip_8)}
+```
+`r if(!is_empty(info$ss_clip_8)) { "<br>" }`
+`r if(!is_empty(info$ss_text_9)) {info$ss_text_9}`
+`r if(!is_empty(info$ss_text_9)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_9)) {knitr::include_graphics(info$ss_clip_9)}
+```
+`r if(!is_empty(info$ss_clip_9)) { "<br>" }`
+`r if(!is_empty(info$ss_text_10)) {info$ss_text_10}`
+`r if(!is_empty(info$ss_text_10)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_10)) {knitr::include_graphics(info$ss_clip_10)}
+```
+`r if(!is_empty(info$ss_clip_10)) { "<br>" }`
+  
+<!-- Development -->
+`r if(!is_empty(info$dev_text_1)) {paste("**Development:**", info$dev_text_1, sep=" ")}`
+`r if(!is_empty(info$dev_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_1)) {knitr::include_graphics(info$dev_clip_1)}
+```
+`r if(!is_empty(info$dev_clip_1)) { "<br>" }`
+`r if(!is_empty(info$dev_text_2)) {info$dev_text_2}`
+`r if(!is_empty(info$dev_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_2)) {knitr::include_graphics(info$dev_clip_2)}
+```
+`r if(!is_empty(info$dev_clip_2)) { "<br>" }`
+`r if(!is_empty(info$dev_text_3)) {info$dev_text_3}`
+`r if(!is_empty(info$dev_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_3)) {knitr::include_graphics(info$dev_clip_3)}
+```
+`r if(!is_empty(info$dev_clip_3)) { "<br>" }`
+`r if(!is_empty(info$dev_text_4)) {info$dev_text_4}`
+`r if(!is_empty(info$dev_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_4)) {knitr::include_graphics(info$dev_clip_4)}
+```
+`r if(!is_empty(info$dev_clip_4)) { "<br>" }`
+`r if(!is_empty(info$dev_text_5)) {info$dev_text_5}`
+`r if(!is_empty(info$dev_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
+```
+`r if(!is_empty(info$dev_clip_5)) { "<br>" }`
+  
+<!-- Projection -->
+**Projection:**
+<br>
+`r if(!is_empty(info$top_end_proj)) {paste("*Top-end:*", info$top_end_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$mid_level_proj)) {paste("*Mid-level:*", info$mid_level_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$low_end_proj)) {paste("*Low-end:*", info$low_end_proj, sep=" ")}`
+
+<!-- Methodology -->
+**Methodology:**
+<br>
+`r if(!is_empty(info$methodology_1)) {info$methodology_1}`
+```{r}
+if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
+```
+`r if(!is_empty(info$methodology_2)) {info$methodology_2}`
+
+<!-- Related -->
+`r if(!is_empty(info$related_1)) {"**Related**"}`
+`r if(!is_empty(info$related_1)) {"<br>"}`
+`r if(!is_empty(info$related_1)) {paste("•", paste(paste("[", paste(info$rel_text_1, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_2)) {"<br>"}`
+`r if(!is_empty(info$related_2)) {paste("•", paste(paste("[", paste(info$rel_text_2, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_3)) {"<br>"}`
+`r if(!is_empty(info$related_3)) {paste("•", paste(paste("[", paste(info$rel_text_3, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+
+</div>
+</div>
+
+**19. Riley Kidney, LHC, Acadie-Bathurst Titan (QMJHL)**
+```{r echo=FALSE }
+htmltools::includeHTML("C:\\Users\\ellis\\Desktop\\site-draftlook\\Cards\\RKidney.html")
+```
+
+```{r echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+library(linguisticsdown)
+
+url <- "https://docs.google.com/spreadsheets/d/15LQi8UZ41jR6bq6MLIGyjRSagLMigFaDl0hgeH2UpWc/edit?usp=sharing"
+info <- rio::import(file = url,which = 2)
+info <- clean_names(info)
+
+info <- mutate_all(info, funs(str_replace(., "â€™", "'")))
+
+info <- subset(info, player_name == "Riley Kidney")
+```
+
+<div class="prftext" style="font-family: Lucida Console, monospace; margin-left: -0%;">
+<!-- One Thing I Love -->
+<hr class="break" style="border:1px solid black"> </hr>
+**One Thing I Love**: `r if(!is_empty(info$otil_text_1)) {info$otil_text_1}`
+`r if(!is_empty(info$otil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_1)) {knitr::include_graphics(info$otil_clip_1)}
+```
+`r if(!is_empty(info$otil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$otil_text_2)) {info$otil_text_2}`
+`r if(!is_empty(info$otil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_2)) {knitr::include_graphics(info$otil_clip_2)}
+```
+`r if(!is_empty(info$otil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$otil_text_3)) {info$otil_text_3}`
+`r if(!is_empty(info$otil_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_3)) {knitr::include_graphics(info$otil_clip_3)}
+```
+`r if(!is_empty(info$otil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$otil_text_4)) {info$otil_text_4}`
+`r if(!is_empty(info$otil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_4)) {knitr::include_graphics(info$otil_clip_4)}
+```
+`r if(!is_empty(info$otil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$otil_text_5)) {info$otil_text_5}`
+`r if(!is_empty(info$otil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_5)) {knitr::include_graphics(info$otil_clip_5)}
+```
+`r if(!is_empty(info$otil_clip_5)) { "<br>" }`
+
+  <!-- Another Thing I Love -->
+`r if(!is_empty(info$atil_text_1)) {paste("**Another Thing I Love:**", info$atil_text_1, sep=" ")}`
+`r if(!is_empty(info$atil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_1)) {knitr::include_graphics(info$atil_clip_1)}
+```
+`r if(!is_empty(info$atil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$atil_text_2)) {info$atil_text_2}`
+`r if(!is_empty(info$atil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_2)) {knitr::include_graphics(info$atil_clip_2)}
+```
+`r if(!is_empty(info$atil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$atil_text_3)) {info$atil_text_3}`
+`r if(!is_empty(info$atil_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_3)) {knitr::include_graphics(info$atil_clip_3)}
+```
+`r if(!is_empty(info$atil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$atil_text_4)) {info$atil_text_4}`
+`r if(!is_empty(info$atil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
+```
+`r if(!is_empty(info$atil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$atil_text_5)) {info$atil_text_5}`
+`r if(!is_empty(info$atil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_5)) {knitr::include_graphics(info$atil_clip_5)}
+```
+`r if(!is_empty(info$atil_clip_5)) { "<br>" }`
+  
+<!-- Swing Skill -->
+`r if(!is_empty(info$ss_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
+`r if(!is_empty(info$ss_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_1)) {knitr::include_graphics(info$ss_clip_1)}
+```
+`r if(!is_empty(info$ss_clip_1)) { "<br>" }`
+`r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
+`r if(!is_empty(info$ss_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_2)) {knitr::include_graphics(info$ss_clip_2)}
+```
+`r if(!is_empty(info$ss_clip_2)) { "<br>" }`
+`r if(!is_empty(info$ss_text_3)) {info$ss_text_3}`
+`r if(!is_empty(info$ss_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_3)) {knitr::include_graphics(info$ss_clip_3)}
+```
+`r if(!is_empty(info$ss_clip_3)) { "<br>" }`
+`r if(!is_empty(info$ss_text_4)) {info$ss_text_4}`
+`r if(!is_empty(info$ss_text_4)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_4)) {knitr::include_graphics(info$ss_clip_4)}
+```
+`r if(!is_empty(info$ss_clip_4)) { "<br>" }`
+`r if(!is_empty(info$ss_text_5)) {info$ss_text_5}`
+`r if(!is_empty(info$ss_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_5)) {knitr::include_graphics(info$ss_clip_5)}
+```
+`r if(!is_empty(info$ss_clip_5)) { "<br>" }`
+`r if(!is_empty(info$ss_text_6)) {info$ss_text_6}`
+`r if(!is_empty(info$ss_text_6)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_6)) {knitr::include_graphics(info$ss_clip_6)}
+```
+`r if(!is_empty(info$ss_clip_6)) { "<br>" }`
+`r if(!is_empty(info$ss_text_7)) {info$ss_text_7}`
+`r if(!is_empty(info$ss_text_7)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_7)) {knitr::include_graphics(info$ss_clip_7)}
+```
+`r if(!is_empty(info$ss_clip_7)) { "<br>" }`
+`r if(!is_empty(info$ss_text_8)) {info$ss_text_8}`
+`r if(!is_empty(info$ss_text_8)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_8)) {knitr::include_graphics(info$ss_clip_8)}
+```
+`r if(!is_empty(info$ss_clip_8)) { "<br>" }`
+`r if(!is_empty(info$ss_text_9)) {info$ss_text_9}`
+`r if(!is_empty(info$ss_text_9)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_9)) {knitr::include_graphics(info$ss_clip_9)}
+```
+`r if(!is_empty(info$ss_clip_9)) { "<br>" }`
+`r if(!is_empty(info$ss_text_10)) {info$ss_text_10}`
+`r if(!is_empty(info$ss_text_10)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_10)) {knitr::include_graphics(info$ss_clip_10)}
+```
+`r if(!is_empty(info$ss_clip_10)) { "<br>" }`
+  
+<!-- Development -->
+`r if(!is_empty(info$dev_text_1)) {paste("**Development:**", info$dev_text_1, sep=" ")}`
+`r if(!is_empty(info$dev_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_1)) {knitr::include_graphics(info$dev_clip_1)}
+```
+`r if(!is_empty(info$dev_clip_1)) { "<br>" }`
+`r if(!is_empty(info$dev_text_2)) {info$dev_text_2}`
+`r if(!is_empty(info$dev_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_2)) {knitr::include_graphics(info$dev_clip_2)}
+```
+`r if(!is_empty(info$dev_clip_2)) { "<br>" }`
+`r if(!is_empty(info$dev_text_3)) {info$dev_text_3}`
+`r if(!is_empty(info$dev_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_3)) {knitr::include_graphics(info$dev_clip_3)}
+```
+`r if(!is_empty(info$dev_clip_3)) { "<br>" }`
+`r if(!is_empty(info$dev_text_4)) {info$dev_text_4}`
+`r if(!is_empty(info$dev_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_4)) {knitr::include_graphics(info$dev_clip_4)}
+```
+`r if(!is_empty(info$dev_clip_4)) { "<br>" }`
+`r if(!is_empty(info$dev_text_5)) {info$dev_text_5}`
+`r if(!is_empty(info$dev_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
+```
+`r if(!is_empty(info$dev_clip_5)) { "<br>" }`
+  
+<!-- Projection -->
+**Projection:**
+<br>
+`r if(!is_empty(info$top_end_proj)) {paste("*Top-end:*", info$top_end_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$mid_level_proj)) {paste("*Mid-level:*", info$mid_level_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$low_end_proj)) {paste("*Low-end:*", info$low_end_proj, sep=" ")}`
+
+<!-- Methodology -->
+**Methodology:**
+<br>
+`r if(!is_empty(info$methodology_1)) {info$methodology_1}`
+```{r}
+if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
+```
+`r if(!is_empty(info$methodology_2)) {info$methodology_2}`
+
+<!-- Related -->
+`r if(!is_empty(info$related_1)) {"**Related**"}`
+`r if(!is_empty(info$related_1)) {"<br>"}`
+`r if(!is_empty(info$related_1)) {paste("•", paste(paste("[", paste(info$rel_text_1, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_2)) {"<br>"}`
+`r if(!is_empty(info$related_2)) {paste("•", paste(paste("[", paste(info$rel_text_2, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_3)) {"<br>"}`
+`r if(!is_empty(info$related_3)) {paste("•", paste(paste("[", paste(info$rel_text_3, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+
+</div>
+</div>
+
+**20. Matthew Samoskevich, RHC, Chicago Steel (USHL)**
+```{r echo=FALSE }
+htmltools::includeHTML("C:\\Users\\ellis\\Desktop\\site-draftlook\\Cards\\MSamoskevich.html")
+```
+
+```{r echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+library(linguisticsdown)
+
+url <- "https://docs.google.com/spreadsheets/d/15LQi8UZ41jR6bq6MLIGyjRSagLMigFaDl0hgeH2UpWc/edit?usp=sharing"
+info <- rio::import(file = url,which = 2)
+info <- clean_names(info)
+
+info <- mutate_all(info, funs(str_replace(., "â€™", "'")))
+
+info <- subset(info, player_name == "Matthew Samoskevich")
+```
+
+<div class="prftext" style="font-family: Lucida Console, monospace; margin-left: -0%;">
+<!-- One Thing I Love -->
+<hr class="break" style="border:1px solid black"> </hr>
+**One Thing I Love**: `r if(!is_empty(info$otil_text_1)) {info$otil_text_1}`
+`r if(!is_empty(info$otil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_1)) {knitr::include_graphics(info$otil_clip_1)}
+```
+`r if(!is_empty(info$otil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$otil_text_2)) {info$otil_text_2}`
+`r if(!is_empty(info$otil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_2)) {knitr::include_graphics(info$otil_clip_2)}
+```
+`r if(!is_empty(info$otil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$otil_text_3)) {info$otil_text_3}`
+`r if(!is_empty(info$otil_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_3)) {knitr::include_graphics(info$otil_clip_3)}
+```
+`r if(!is_empty(info$otil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$otil_text_4)) {info$otil_text_4}`
+`r if(!is_empty(info$otil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$otil_clip_4)) {knitr::include_graphics(info$otil_clip_4)}
+```
+`r if(!is_empty(info$otil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$otil_text_5)) {info$otil_text_5}`
+`r if(!is_empty(info$otil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$otil_clip_5)) {knitr::include_graphics(info$otil_clip_5)}
+```
+`r if(!is_empty(info$otil_clip_5)) { "<br>" }`
+
+  <!-- Another Thing I Love -->
+`r if(!is_empty(info$atil_text_1)) {paste("**Another Thing I Love:**", info$atil_text_1, sep=" ")}`
+`r if(!is_empty(info$atil_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_1)) {knitr::include_graphics(info$atil_clip_1)}
+```
+`r if(!is_empty(info$atil_clip_1)) { "<br>" }`
+`r if(!is_empty(info$atil_text_2)) {info$atil_text_2}`
+`r if(!is_empty(info$atil_text_2)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_2)) {knitr::include_graphics(info$atil_clip_2)}
+```
+`r if(!is_empty(info$atil_clip_2)) { "<br>" }`
+`r if(!is_empty(info$atil_text_3)) {info$atil_text_3}`
+`r if(!is_empty(info$atil_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_3)) {knitr::include_graphics(info$atil_clip_3)}
+```
+`r if(!is_empty(info$atil_clip_3)) { "<br>" }`
+`r if(!is_empty(info$atil_text_4)) {info$atil_text_4}`
+`r if(!is_empty(info$atil_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
+```
+`r if(!is_empty(info$atil_clip_4)) { "<br>" }`
+`r if(!is_empty(info$atil_text_5)) {info$atil_text_5}`
+`r if(!is_empty(info$atil_text_5)) { "<br>" }`
+```{r}
+  if(!is_empty(info$atil_clip_5)) {knitr::include_graphics(info$atil_clip_5)}
+```
+`r if(!is_empty(info$atil_clip_5)) { "<br>" }`
+  
+<!-- Swing Skill -->
+`r if(!is_empty(info$ss_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
+`r if(!is_empty(info$ss_text_1)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_1)) {knitr::include_graphics(info$ss_clip_1)}
+```
+`r if(!is_empty(info$ss_clip_1)) { "<br>" }`
+`r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
+`r if(!is_empty(info$ss_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_2)) {knitr::include_graphics(info$ss_clip_2)}
+```
+`r if(!is_empty(info$ss_clip_2)) { "<br>" }`
+`r if(!is_empty(info$ss_text_3)) {info$ss_text_3}`
+`r if(!is_empty(info$ss_text_3)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_3)) {knitr::include_graphics(info$ss_clip_3)}
+```
+`r if(!is_empty(info$ss_clip_3)) { "<br>" }`
+`r if(!is_empty(info$ss_text_4)) {info$ss_text_4}`
+`r if(!is_empty(info$ss_text_4)) { "<br>" }`
+```{r}
+  if(!is_empty(info$ss_clip_4)) {knitr::include_graphics(info$ss_clip_4)}
+```
+`r if(!is_empty(info$ss_clip_4)) { "<br>" }`
+`r if(!is_empty(info$ss_text_5)) {info$ss_text_5}`
+`r if(!is_empty(info$ss_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_5)) {knitr::include_graphics(info$ss_clip_5)}
+```
+`r if(!is_empty(info$ss_clip_5)) { "<br>" }`
+`r if(!is_empty(info$ss_text_6)) {info$ss_text_6}`
+`r if(!is_empty(info$ss_text_6)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_6)) {knitr::include_graphics(info$ss_clip_6)}
+```
+`r if(!is_empty(info$ss_clip_6)) { "<br>" }`
+`r if(!is_empty(info$ss_text_7)) {info$ss_text_7}`
+`r if(!is_empty(info$ss_text_7)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_7)) {knitr::include_graphics(info$ss_clip_7)}
+```
+`r if(!is_empty(info$ss_clip_7)) { "<br>" }`
+`r if(!is_empty(info$ss_text_8)) {info$ss_text_8}`
+`r if(!is_empty(info$ss_text_8)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_8)) {knitr::include_graphics(info$ss_clip_8)}
+```
+`r if(!is_empty(info$ss_clip_8)) { "<br>" }`
+`r if(!is_empty(info$ss_text_9)) {info$ss_text_9}`
+`r if(!is_empty(info$ss_text_9)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_9)) {knitr::include_graphics(info$ss_clip_9)}
+```
+`r if(!is_empty(info$ss_clip_9)) { "<br>" }`
+`r if(!is_empty(info$ss_text_10)) {info$ss_text_10}`
+`r if(!is_empty(info$ss_text_10)) { "<br>" }`
+```{r}
+if(!is_empty(info$ss_clip_10)) {knitr::include_graphics(info$ss_clip_10)}
+```
+`r if(!is_empty(info$ss_clip_10)) { "<br>" }`
+  
+<!-- Development -->
+`r if(!is_empty(info$dev_text_1)) {paste("**Development:**", info$dev_text_1, sep=" ")}`
+`r if(!is_empty(info$dev_text_1)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_1)) {knitr::include_graphics(info$dev_clip_1)}
+```
+`r if(!is_empty(info$dev_clip_1)) { "<br>" }`
+`r if(!is_empty(info$dev_text_2)) {info$dev_text_2}`
+`r if(!is_empty(info$dev_text_2)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_2)) {knitr::include_graphics(info$dev_clip_2)}
+```
+`r if(!is_empty(info$dev_clip_2)) { "<br>" }`
+`r if(!is_empty(info$dev_text_3)) {info$dev_text_3}`
+`r if(!is_empty(info$dev_text_3)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_3)) {knitr::include_graphics(info$dev_clip_3)}
+```
+`r if(!is_empty(info$dev_clip_3)) { "<br>" }`
+`r if(!is_empty(info$dev_text_4)) {info$dev_text_4}`
+`r if(!is_empty(info$dev_text_4)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_4)) {knitr::include_graphics(info$dev_clip_4)}
+```
+`r if(!is_empty(info$dev_clip_4)) { "<br>" }`
+`r if(!is_empty(info$dev_text_5)) {info$dev_text_5}`
+`r if(!is_empty(info$dev_text_5)) { "<br>" }`
+```{r}
+if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
+```
+`r if(!is_empty(info$dev_clip_5)) { "<br>" }`
+  
+<!-- Projection -->
+**Projection:**
+<br>
+`r if(!is_empty(info$top_end_proj)) {paste("*Top-end:*", info$top_end_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$mid_level_proj)) {paste("*Mid-level:*", info$mid_level_proj, sep=" ")}`
+<br>
+`r if(!is_empty(info$low_end_proj)) {paste("*Low-end:*", info$low_end_proj, sep=" ")}`
+
+<!-- Methodology -->
+**Methodology:**
+<br>
+`r if(!is_empty(info$methodology_1)) {info$methodology_1}`
+```{r}
+if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
+```
+`r if(!is_empty(info$methodology_2)) {info$methodology_2}`
+
+<!-- Related -->
+`r if(!is_empty(info$related_1)) {"**Related**"}`
+`r if(!is_empty(info$related_1)) {"<br>"}`
+`r if(!is_empty(info$related_1)) {paste("•", paste(paste("[", paste(info$rel_text_1, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_2)) {"<br>"}`
+`r if(!is_empty(info$related_2)) {paste("•", paste(paste("[", paste(info$rel_text_2, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+`r if(!is_empty(info$related_3)) {"<br>"}`
+`r if(!is_empty(info$related_3)) {paste("•", paste(paste("[", paste(info$rel_text_3, "]", sep=""), sep = ""), paste("(", paste(info$related_1, ")", sep=""), sep = ""), sep = ""), sep=" ")}`
+
+</div>
+</div>

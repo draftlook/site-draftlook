@@ -9,19 +9,31 @@ footnotereturnlinkcontents: "↩"
 
 permalinks:
   note: "/note/:year/:month/:day/:slug/"
-  post: "/post/:year/:month/:day/:slug/"
+  post: "/post/:slug/"
 
 menu:
   main:
     - name: Home
       url: ""
       weight: 1
-    - name: Rankings
-      url: "/post/2021/05/23/preview/"
+    - name: Tier One
+      url: "/post/tierone/"
       weight: 2
+    - name: Tier Two
+      url: "/post/tiertwo/"
+      weight: 3
+    - name: Tier Three
+      url: "/post/tierthree/"
+      weight: 4
+    - name: Tier Four
+      url: "/post/tierfour/"
+      weight: 5
+    - name: Tier Five
+      url: "/post/tierfive/"
+      weight: 6
     - name: Links
       url: "/Links/"
-      weight: 3
+      weight: 7
 
 params:
   description: "A website built through Hugo and blogdown."

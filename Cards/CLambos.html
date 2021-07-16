@@ -1,0 +1,282 @@
+
+
+
+<style type="text/css">
+
+@import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
+
+.playerheader {
+font-size: 150%;
+}
+.body {
+font-size: 110%;
+margin-left: 23.25%;
+}
+table { 
+width: 100%;
+margin-top: -9%;
+background-color: white !important;
+}
+table, th, td {
+border: 1px solid black;
+border-collapse: collapse;
+}
+.header {
+font-size: 110%;
+padding: 2%;
+text-align: center;
+}
+.num {
+text-align: center;
+font-size: 150%;
+padding: 2%;
+}
+.footer {
+text-align: center;
+border-top-style: hidden;
+}
+.biotext{
+width: 32.5%;
+margin-left: 22.5%;
+padding: 0%;
+}
+.image {
+float: left;
+width: 18%;
+height: 10%;
+margin-top: 4.75%;
+margin-left: 0%;
+}
+.tableclass{
+float: right;
+width: 42.5%;
+margin-top: 6%;
+}
+.break {
+border-top-style: solid;
+border-top-color: black;
+margin-left: 0px;
+width: 100%;
+padding: 0%;
+}
+.bio{
+margin-left: 0%;
+padding: 0%;
+}
+.bodytext {
+margin-left: 22.5%;
+}
+.row { display: flex; padding-bottom: 1%; margin-left: 22.5%; margin-right: 0.05%; font-size: 110% }
+.column { flex: 0 0 50%; align-self: center; }
+.tab{
+font-size: 110%;
+}
+.prftext{
+font-family: Spectral, sans serif;
+margin-left: 22.5%;
+}
+thead, tfoot, tr:nth-child(even) { 
+background: white;
+}
+.playercard {
+font-family: Lucida Console, monospace;
+width: 129%;
+margin-left: -29%;
+}
+
+</style>
+<div class="playercard">
+<!-- Building Table -->
+<div class="tableclass">
+<table>
+<tr class="header">
+<th>
+<strong>GOALS</strong>
+</th>
+<th>
+<strong>ASSISTS</strong>
+</th>
+<th>
+<strong>POINTS</strong>
+</th>
+</tr>
+<tr>
+<td class="num">
+0.15
+</td>
+<td class="num">
+0.69
+</td>
+<td class="num">
+0.85
+</td>
+</tr>
+<tr>
+<td class="footer">
+PER GAME
+</td>
+<td class="footer">
+PER GAME
+</td>
+<td class="footer">
+PER GAME
+</td>
+</tr>
+<tr class="header">
+<td>
+<strong>ADJ GOALS</strong>
+</td>
+<td>
+<strong>ADJ ASSISTS</strong>
+</td>
+<td>
+<strong>ADJ POINTS</strong>
+</td>
+</tr>
+<tr>
+<td class="num">
+1.22
+</td>
+<td class="num">
+5.48
+</td>
+<td class="num">
+6.70
+</td>
+</tr>
+<tr>
+<td class="footer">
+PER 82
+</td>
+<td class="footer">
+PER 82
+</td>
+<td class="footer">
+PER 82
+</td>
+</tr>
+</table>
+</div>
+<!-- Inserting Image -->
+<div class="image">
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABQCAYAAABRX4iyAAAAB3RJTUUH3gEVDTgidGA3rgAAAAlwSFlzAAAewgAAHsIBbtB1PgAAAARnQU1BAACxjwv8YQUAABdnSURBVHja1VwJdBzFmf77mtHoGl3WZcm2JNuALR/4huA4Jg5ZEjCYx/IIiZJwGuuwCeRt8h772CQvJ2Q3u8ACcZaFhCSEJIawEEwSxxgbbJ2WLNmWZVnHaC5pdI00I83VXbV/1WiUkTyyNcKSNfVeqXta3dVVX/3H99fRAsxdEsrKy9KIRgoFQV4sCLAIRCkXr2cJIs0EKqTheQoek6gEBqAQh79FACoJgqhSSv0CpR787QYCg1Sg/VhkN95jAYGaBCJd0DRvS17eQuuTT/4rmZUGzEahDz/yiFGW9OtEBdZQIqwUZXEFIcIyEBEQUZAovpbifVQIvp6yAyFg8KugDwRA0TSQiRasHDZbkwTMMngUCbMOiCwhPsHKI4C8NPYby0AM6QAFckogUAMgHfP73R/t3/+LoXkD1gMPPpBliEvcLijidkrgJioK11JBFBkYHBC8mOzxQsawGzLcLkhzjUAq/k4ZGYUkr5fneH8AKyPwGtGpKkqD//MiaMN6AzgTDdCfkAC9SYlgT00GW2oKuOIMTBxBRBBZRgBVoLQS8zuaFvjjiy++2D7nYJWWli4VJeVuIgh3CJK0Ho8KZhBQIvIGnLCobwBynUOQ43RCJoJkUFX+HAeQyQIHJXgcw2HC8VKVHT9yqRo70uDRaYiDzow0aM/KgJbsbOhLThoHT9A0FQg95HK5n/vlL1/+O172zRpYKEFpekPifaIkfRWB2UAlEetHEZxBuNbaDcscvbCkdwBklCQyJlVBcGA8z2YSxjIHBrOEecBggFP5uVBfsAgsaalYN7wHVb7f0eNuqDt52OV0HnD5vW8NOZ2uKwLWo4/uLUaT8Q2QpHuIJCVq+FRhdy+sM5mh2GpDNfJxUEIAzYp1nSF4TKo4cAhQV1oK/HXVSjiXmw0KXid+P9RVVoHdanZKivyKNjr6tKmvr3tGYJWVlW0QROUpIolfRJDEJLQxW1rbYHOHCVLQ5miiGAQIprYzoQwhVQH6j9/h947ZIwhXyzGVJQJMkNCZpHDQWrKz4Hc3bABvXBzIeL2hthpMHZ34OsGFPuJ7nZaun+FlbVpgPfBgRV58vPQMEYV/JrIsZQ06YcfpZlhttrECAa9z6aERCgtVKmRgvaIEjuRE6Efb0R9vAJeB5Thw6/Xg0evAj54tIEkcdAaHqFHQo31L8PnAiB2SNuyC3CEX5Pf3c6fAJZd10gyBY/Vj6jmiKLB/+03gQKeg4O+q4x9Dj90e7EYKh72q/1673d53KbCEsr3fKMfW/oBIcpJxxA23n2yCNQiSJgWlaLKKhWwEqwBzPpY0I7QtWAAmNLLWjFQYSEhEtiAEQYSJRlqIUAE69peE/WbniCF6UResNllgc7sJveoIEGlmoIXqHMCOfPaWz4DTmAwUO+jQwfcggKrJ30tIs+b13Gzq7e0Of46nkpKvpBiN6b/CCtyG6iV8FiXpljMtTBMigjTunlGs2xekQ03BEjibn4PSEgcSl5Lg/z2jo+AaGgI3NtQzMgIezyj4vH4IBHyYA+jZCe9Kfj9WXsYe1+sVUHR6MMTHQ0JiEqSmp4MxBfnqmERp6EBWYgfeWXcKjGgvVVGYkZTJ+N5BlPaffuFzgB4deswWqKk8jvUQYUzEavxd2jYLWDzjYD366DczZSVwiMryKh3ynfuPfgwF/YNYCTGiseairBE4szAbDq4pRlE2coMpEPQ+vb3g6LbDIKrN4CCWEQgEXxIioPTSzcL/o6YJGhcoyu9GzLFmsizkLFwIhcuWgjEtg5sCEcnrvcdrYI3VPmVdLydhCnbW365bDoewHTr8ffj992EENSqUCNGe7TCb9/H7v1pSEpeUkvYhIrtJVjXY+5fDkIHSoAqRe4sDhVzqjU3robZwCdd3Jl0XWlqg7UIrSo2Xqx2zbSGAQik9IwMysjJBkXWAppD3IDYQ2y0OK4rSKspyi16na9I00tjefr6hsbFxWNM00eA16OWEQIqqU9JB1bK377jl2gVZWd/CAtIC+I4vI2BrzdYZSZjIe0WA7+76AiKnQOf589B0qiFculQ/0dZZLJYmoaxi35PYuO+rKIZfPVYJK23BXprqpcw2HV+6BP60YR3osWcZMDUnjoPVbEZmIQVBmigpBB9pwNP3NG/g6I6dOweTjYnfRptwF7uZ/VNBKfUqMrdBEBQlbIGmYshSK1DyeyDqq88///xgeLkVFeXXoqU8jC/NYd7yiT8fgnTsZA2iTzrs7D9uuB7qlhaAip39/v+9zdsyLl2UvNHR1XWvtHnzltcwMkmJ9/vgnso6ULHHL9U7DO9WlI627EwOHAOHGUVHT/dEFWPuXqN/Dvh993bZrN9zDg99MDTqaq+vr7VVnjj++40bN23AB5Yzr7Cz/hSUfFQJG1s7YKXFBjlIchFAsS8pMQ+98edFEB5aWrRMc9itdGTU04ula9XV1X1btmyqxtizBG0Zuxc2dHRx9Yw2jRkIqF+SD3GyDOaODhTgMNgpXapPiP+5jK3N5g9M4j1TJea6tze3opeLh5qiJYCyBIvQjuQXFECvwwFDaKtGRkdAVdXWLTdu/bFH88nI+NcKfqQ0VEukElkoEnEzFrWdqSnzsgdXrYCNbSYwMrqAPVvU2w/bzrcDPgnvri6GquWF6ai+Py0oKIJ4Q8IovvIQdszLzz773Lv79j3+Ota9pBmJ5mB8HCT5/FGrInNgi/v6UYKAm47k1FTwMhoxpiUoTHFxinIryj79EHXpFhcStFoMCdajaw5IUxtLdp113j019bADveXJxXnQiiTPnJEOaXl5kI5Z5J1Bl/koPSZISpBM6thfmfejOl5JgOzBIbijrpFLBO9LBiCPpwW0jZS/x5SZAX0pRri2eBX0dHfHo43biUTl9oKFeUe7e6z/lZWTV8KU5lxONifMRIhOuljNktBD6wMYc6M5iMfgnAJMIs3CVllVfXtlRX9UolImY7VDSBi3nWvl7n8q8sev4f+YFOxAKbvl7HmugswNDyQlwDASTzcSTg+KNCecTP8ZAGibdCjeBuz9dKQRC5HsMtcfigQmqwazXf0owQNYec7Jwu4RWJLlbSeOHkvZdc+9TrSdKXYElGkIRAlWUGOAj364lETQKbqxVoe/j66SX3rppZZH9lbcqGjwChq1rQevXw3HlxXxsGYDxn6MNZOwuC88KOZZDFJL9jcJbVdyny9sVCDUb5Mr9o/xLOZYQneMhySc4FKoW7IY3l1XDJpOASY5zY2NFzkQQRBXDwz0+40ZC8Adp5/xMAp7Tq+pMMzqIYpwkWhRYTHTC9j/7HNteNi2p6LiNpFIjw0b4j79l+tXy++tWw1ZzmFY1uOARci7mCSku0bQe2gTGz02DhWCJvQ7NAwTXqHgTeFDK/+IFf0YrXdmpkNzdjY0oEkYRRukYIE+txvqa6qhHzmcMObSw8tEYE14WK7KE/8XbSJjNUTvFwFNmiqHY/fic8+9g8d3SktLFyNoO7HXPj+QmLCtKmVZYtWYdAmIfvIoxmwuNxhHPXg+ComoVoaAH+L5UQUdhg5M3ZSAhixZCwbJWA9VwDhQkcArKygFOsxxMICq24+erAdVqDc5Gc2aiJIVVEFXbx+Y2trA3GUKgiteDAZSkNczMhaMBtCzCnSmchXsZD+aDVaCysbeLlJlQSdHevCFF15gPfUcyympqSnLC5fv1sfrH0xISFianGwUPEYjDGPsJyKJC6lF+IhA8HxqnyRMyEEVZrGZ1zUMzoEBlCAHdKM34gQXARIj2CCUJhdSuB+Z7LanCaG/YF5HUVWYaWId6kI1Zu9i741wh1++XCHOwUFndV3VT/D0mcyUzHV6nfhF7MCbkW1vRLZtYPFbHEqInmW9HkkwsnOdjsd4CvYU0gZssBB0y0j+WK8F1AD4sUI+NO4ezwjGjW4YRYOPbJ2DH8rhxDCEEcaS5/Dw2ojf/7KjB+0DsFhRTUVqCwkzoA2hzhvFeNSPntDAzrEuwkUdRIcuC1ZYIg6noxaPLH8Xs5KfnV3s9fvWoHKsQIVfLohCIXZ5Pr4pCV8mRRrCCZ4IE+LFUMUmg4PS48Ey2hGik2hFjquE/N1qtbZeLBXCQmY/Ez2eGXlCJlWOpKSgjKP6Dw8PR7iL2qMBa3IKmLu76/FYP+m6mJiUaExPTMrCeDNLoGIGlSAdwUzBOhnRBSehSTdgDXUCHw+kbEIBQaEj2OB+gZBeqgkWv6CZbDYbMwfey9SDGbJCZpLT0IbOTLIon+xgQZ4PibHf58WOmwgNltvxScCaKhFUq0GW8fzcLJQ/IT3y+DeyQCVpTLIyh13j02vRJOZMutLTOD1x9PUyOhIBUGj+ZL52HiSdn6zFxgnMHmYPDc9oIJANLXUgZWFqyOlJJIcC0BDzYGEzNjFpWoBOgtGVmYDlTDBAX2Ii53zoNCKOnAiBQFXMg4We+SbG/wow+KbCDMazEKBzOVk8vPOjvYpo3CmY2u12c0yDdeeuOw0oBZsZWEWO3qgDaB5/ogqeyc3h9qrHbpsqXDrMIItpsHJzFt2I9iqJSdPy7p4ZgcVGWM4vzOYu1W61RrRXBMhf2TGmwUJyfxsDaOHgYHCiN9rnUQVP5+cCESUgSJYdGDVEsFcBOuSMebCYE7yDjYMVd1nRXolRgcUgYROubGSDzfJ026xAIkym4KWjpmGXM6bBKi3dtwlFq4AtTLoewYp2OJk1nI3dnc/J5Mbd3GmKqILYA2+GPxOTSZLE+5gK5g86IcPtjnoajM1IVRYu4YEzi1O5cY+ggppE34ppsEpKSuKQ+nyJoOptutDBR3SjUUHeaHzgxLIitFsAne3tEWNKDMEOd5m67DENVnJq6p0gSwvYJOv6zq6ovSAz7A2L8mAk3sBVsLO9bXyeMDxhnPrLCc9d7YbPKFGhlAHEgGJzl9GoIF92oBH4YMU144adLSu46BWU9mkWy1uTn42pVFb22Dq0LTexGfOt5y6AJkTXBM7Yc7PAnmoMzoG2nIs8AkvhVdOkEY+YA0sQ6RNUkoRr7D2Qg6EJiUIDQ2s03l+9gq/NcPb3Q7+jN7Jh99MXIj0fM+mRiooibNndTKp2nGm+5DKDiGAxEpqXA9b0dN7w5jOnI9oqhOvNrp6ujpgGS0eFb6NU6ZagNBRi4ByNYefTbBgHvrt2FV/Mwlb5OLq7I44waKr6k6nKiIm0Z89jhUiuSphUfaGxOSq6EGLrx5cVwoAxmQfNpxvqI0oV0oV3TDZbfaRyYgYsSaLfoaKoL+p2oFT1omGPTqo8sgIH16zkE7hWcxeXrAhSpYKmPXWpcuZ9Ki8vX0Ml4UsMoJ0NjXy6PxqpkpFevL1+NagKmnU8b2po4LNOkxNK1W86rNbGmAYLBOkZKkryWuRVuYPDUdkqJknnsxbAyQIMmPG55qbGiPOCbB4yQMiTlypr3oNVUVFxO6rfDrao5PaGJr7gbbpSxRqnIg97Y8tGThWGBvqhrbU1oq0iQH9gsVisMQvWww8/HI8S9TOCvOqzSBXYmNV02TprGFO/NzeuBXeCgXvCusrKyJMRlDR2dnX9x3TKnLdJ0Ru+hWAVpbldcHNz67RtVcj7NeTnQR2qn4JXmPdzu90RjTol5GE8DcQsWBXlT1wrSOK/MKpwd1VDcIn5NJ/le3YS4uEPW9Zz9bNbLdB+YQr1I/QnHRZL9XTKnadgfV8korafSnLc+g4Tn4yYLlVgPo4NCL669Qagsgy+0VGoq6qKtG6CSVV1p6Xre9Ot1bwEq7zcUYpisFXv88Guk6embdT5iIKqwes3boDe1BS+Mqfy2IdAtIvXMKPqOQOU3Ien/pgFi+1jpJL4Qxb33VNdBzps/HSWa7OGsB2w76+6Dk4vyufqV1d5AtzDroghDaL1gNlsboumbvMKrF277pREWfcKer+k65FTFVvs0+JUwY0MBCqLlsDh1SswhqTQeLKOr/GaPPxCeSLfb580VhVzYOXm5n8bwfkUWzp0d009aGzx7mWeCXm+M7nZ8OamdcAWRbc2n4X2KfgUwvXHDrP5uzOp37wB69GKii0gy0+xTVZf/riW76m5nPrxUAbvO5+VCa9t3QIKElC2rPJsU1NEg46e72M/IV+D6TvWCWk2lhxFnUoeeyxFpvBrlCTdzaeboaivDwLipfsxBFRrZia8uu1ToKAT6Gprh1N1tRGBQv077dMCd9hsNs9M6zkfwBKMGv0fIstFeX0DcGtTM6iX8X7iGFCnUfVeQ4rAJx1aL0wJFKG0VXWTz9sGbP2fpKJXHayyin37iCjepQQC8LWPToxvVLgUUGxjVFXhIjiweQMPjtvONcOZU6em4lLt3oB/h33Abvukdb2qYJWW7vs0iMLTLPb7yrETkOzzQ+AS3i84hq7BweLr0Out5PsDz2AYw7bvRQaKtHhV9XN2u918Jep71cB68KGKPFGG36mSrHy28Sxc0+3gY+qREvd4lPJF/a99ahOcYesTELRaDIxtFvNUQDVoHs+ttrBtuzEJFvIpQ1y8dADtVM41Vjv8E5t8kKRLbAalfHPBK9tugH5k5sTrhRNHj4JzcGCqeO/wgGvoriHn0BX5rMrVBEvIzVu8H8VhU4p7BEo+rp6STzF5YWpXn78QDmzZCEQng7t/ACo/OsZX6UUcQyfar5FHPQRRfg1kXoJVWr7vSUGSviJi3PbQB8dAwchDjbAjjKldAHnT79GI1yMzZ+GL+UIbMvPa4K6Mi0MYDR/5NwTqhzBLHyeZU7DK9u69VxCl77C9zA8dqYSMUc9FQAUH7Qi0ZabD6zdshJGEhKB01daAubMzsn0iZEij5Osmi+VPs1n/OQOrvPyxrRSE/0WyKd1VcxKucfRy4hm+fY5NgrJh4DfXr4UT1xRxaRpBu1R9/DjfIjKFIW8kmnqPyWZrme02zAlYu3dXrBAkeAuNuGHb2Ra48ULHuEEPfWWESc9ZJJkHNq5DaYoHPf6XxXjnTp8JghkhIMY/r7j9vr2Onp6RqCs1H8Has2dPvqRI7yFFSF9tMsNtp06PAxUaLRiK08OfNmyCs2jImTR5hp1QX1XNNllFNuKUDqKmlpssXb+dC5DmBKyysrJ0QVIOarK0mE2533eiNrgFGGD8cyzsAxRHilcgLZeAfVei+XQTXDh3HtjimMi0gBwhft/9pp6ezrkEalbBqqioSCYgvYfgrGS7YR88cjy4uI5t60WxqCtYBO+tKYaRxAS+Tsrc3gFnG0/xjUaiFHETphPt05MdFsuLMPuf4po7sJ544gmDzx94m8pBLrXn7x9CHBvaRVD4J1nWFoMjJQUURM9pt8MZBGnIOci/RSNGHKyjbwQo+ebl5vViDiy23hOBeotKymcSkRpUHDoCSR4fX2/+PsZz3Wz3FdvS29cHzU1N0OfoCe5WFS/aa8g2C9cEAvSbZrv52NUEKZSu6NckUfX0BMQDoiR9Md7jhb1//YDvtjq08rrgd6oQlIGeHmg5c5pvKGIgRdzRQGkbIdpTyJt+BzMcqJvXYDGJMqak/QEbf5sSUGFjpwma0Ls5k9gHCqk20N2tIg3QD/T3TQkS2iQT0vAfm8zml2Eak54xCdauXY8bcvPUA6Ig3jrWbKBBtfIgkfxt1ZEjw/Zu+145+GWfi0EitEPTyNMmm/lVuPzO1auWPrHNuv/+ryclJGhvC4K4fbzxFLrwz36/Tt5/8Fe/3inrlJ/L7BtQ4QAFSWUjqtu/d1qtr+OlmW+dn6P0iSTrgQfuT4tPML6LwnLD2KefDmHM8pLm97370ks/DyzOy9stidJ/s83lYSARROlvSAV+1mmx/A3mkU2aNbAeqqjIiwPxIJ6yLWy/8lLtlZeff3580WpB/uLHEcRnhLENxyzYRVR+QwP+503d3c1Xu+FzBtbu3buXKLq4hzUgH9adOHG4urZ2ggoV5i16CkThO+zbOgjSKRSm/f1u12+Gr/BgXEyANfZcxIHNgkWL/5N9zwpV8o0AkJeRSNZc7UZeqXQleZZcmJfHPiPsHfX7356rkYC5TP8PDrdgqrP9CgsAAAAASUVORK5CYII=" width="100%" height="90%" style="padding-left: 10%; padding-right: 10%" /></p>
+</div>
+<div class="biotext">
+<h1 class="bio">
+C. LAMBOS
+<h1>
+<hr class="break" style="margin-top: -5%;">
+</hr>
+<h4 class="bio" style="margin-top: -5%">
+LEFT-SHOT DEFENDER
+<h4>
+<h4 class="bio" style="margin-top: -4%">
+JYP (U20 SM-SARJA)
+<h4>
+<h5 class="bio" style="margin-top: -4%">
+SELLING POINT – TRANSITION
+<h5>
+<h5 class="bio" style="margin-top: -4%">
+HEIGHT/WEIGHT – 6’1&quot;&quot;/201 LBS
+<h5>
+<h5 class="bio" style="margin-top: -4%">
+BIRTHDATE – 2003/01/14
+<h5>
+<h5 class="bio" style="margin-top: -4%">
+AGE – 17.67 YEARS
+<h5>
+</div>
+<div class="bodytext">
+<br>
+<p class="tab" style="margin-top: -1.5%;">
+Lambos is a mobile defender that should be felt most in transition, but his offensive creativity and comfort could push his ceiling upwards.
+<p>
+<p class="tab">
+<strong>Similar To:</strong> Matt Grzelcyk, Drew Doughty (per Lambos)
+<p>
+<hr class="break" style="border:1px solid black">
+</hr>
+<p class="tab">
+<strong>Positives:</strong>
+<p>
+<p class="tab">
+• Mobile skater with a powerful stride, good first step, and solid top speed. Seems to have deceptive quickness, leaving forecheckers behind with seamless gear changes despite not looking exceptionally fast out there.
+<p>
+<p class="tab">
+• Sneaky and deceptive player in transition. Can manipulate defenders with his eyes and body, creating lanes and space for himself to make plays on the breakout.
+<p>
+<p class="tab">
+• Strong breakout passer that can hit his forwards with speed in the neutral zone. Very poised and unbothered by defenders, rarely making a poor read even in the face of a heavy forecheck. Eager to take space given by the forecheck and is really good at beating F1.
+<p>
+<p class="tab">
+• Carries his deception to the offensive blueline, where he can step around opposing forwards that dare to challenge him at the point, take the puck into the slot if a lane is open, or activate down the wall when he senses an opportunity.
+<p>
+<p class="tab">
+• Not the scariest shot in the world but Lambos likes to sneak in to the tops of the circles before he uses it. That’s a good habit if he can recreate it at higher levels.
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<strong>Negatives:</strong>
+<p>
+<p class="tab">
+• Not much of an offensive zone playmaker. Lambos likes to get involved offensively, but he doesn’t have a particularly strong eye as a passer and doesn’t wrack up a lot of assists. NHL impact should be transition-centric.
+<p>
+<p class="tab">
+• Not a great rush creator either. Will take low-percentage shots quite frequently and is contained outside pretty easily when he doesn’t.
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<p class="tab">
+<p>
+<hr class="break" style="border:1px solid black">
+</hr>
+<p class="tab">
+<strong>20-80 SCOUTING GRADES:</strong>
+<p>
+</div>
+<div class="row">
+<div class="column">
+SKATING – 55
+</div>
+<div class="column">
+PLAYMAKING – 55
+</div>
+</div>
+<div class="row">
+<div class="column">
+PUCK SKILLS – 50
+</div>
+<div class="column">
+SCORING – 35
+</div>
+</div>
+<div class="row">
+<div class="column">
+HOCKEY IQ – 55
+</div>
+<div class="column">
+PHYSICALITY – 45
+</div>
+</div>
+</div>

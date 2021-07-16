@@ -1,0 +1,192 @@
+---
+title: "Goalie Card Builder"
+author: '@DraftLook'
+date: "21/05/2021"
+output: html_fragment
+params:
+  name: Jesper Wallstedt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(rio)
+library(eeptools)
+library(janitor)
+library(sjmisc)
+
+name <- "Jesper Wallstedt"
+
+url <- "https://docs.google.com/spreadsheets/d/1gsGn70hHh80nC5cOJHc3TMHNEqWg4UawKXtPcuSK2Hw/edit#gid=1081527217"
+data <- rio::import(file = url,which = 2)
+data <- clean_names(data)
+
+player_data <- subset(data, player_name== params$name)
+
+```
+
+<style type="text/css">
+
+@import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
+
+.playerheader {
+font-size: 150%;
+}
+.body {
+font-size: 110%;
+margin-left: 23.25%;
+}
+table { 
+width: 100%;
+margin-top: -9%;
+background-color: white !important;
+}
+table, th, td {
+border: 1px solid black;
+border-collapse: collapse;
+}
+.header {
+font-size: 110%;
+padding: 2%;
+text-align: center;
+}
+.num {
+text-align: center;
+font-size: 150%;
+padding: 2%;
+}
+.footer {
+text-align: center;
+border-top-style: hidden;
+}
+.biotext{
+width: 32.5%;
+margin-left: 22.5%;
+padding: 0%;
+}
+.image {
+float: left;
+width: 18%;
+height: 10%;
+margin-top: 4.75%;
+margin-left: 0%;
+}
+.tableclass{
+float: right;
+width: 42.5%;
+margin-top: 10%;
+}
+.break {
+border-top-style: solid;
+border-top-color: black;
+margin-left: 0px;
+width: 100%;
+padding: 0%;
+}
+.bio{
+margin-left: 0%;
+padding: 0%;
+}
+.bodytext {
+margin-left: 22.5%;
+}
+.row { display: flex; padding-bottom: 1%; margin-left: 22.5%; margin-right: 0.05%; font-size: 110% }
+.column { flex: 0 0 50%; align-self: center; }
+.tab{
+font-size: 110%;
+}
+.prftext{
+font-family: Spectral, sans serif;
+margin-left: 22.5%;
+}
+thead, tfoot, tr:nth-child(even) { 
+background: white;
+}
+.playercard {
+font-family: Lucida Console, monospace;
+width: 129%;
+margin-left: -29%;
+}
+
+</style>
+
+<div class = "playercard">
+<!-- Building Table -->
+<div class = "tableclass">
+  <table>
+    <tr class="header">
+      <th>**GAMES**</th>
+      <th>**SAVE %**</th>
+      <th>**GAA**</th>
+    </tr>
+    <tr>
+      <td class="num">`r player_data$games_played`</td>
+      <td class="num">.908</td>
+      <td class="num">2.23</td>
+    </tr>
+  </table>
+</div>
+
+<!-- Inserting Image -->
+<div class="image">
+```{r pressure, echo=FALSE, out.width = "100%", out.height = "90%", out.extra = 'style="padding-left: 10%; padding-right: 10%"' }
+knitr::include_graphics(player_data$logo_url)
+```
+</div>
+
+<div class="biotext">
+  <h1 class="bio">`r toupper(player_data$player_name)`<h1>
+  <hr class="break" style="margin-top: -5%;"></hr>
+  <h4 class = "bio" style="margin-top: -5%">`r toupper(player_data$position)`<h4>
+  <h4 class ="bio" style="margin-top: -4%">`r toupper(paste(player_data$team, paste("(",player_data$league,")", sep = ""), sep = " "))`<h4>
+  <h5 class="bio" style="margin-top: -4%">SELLING POINT -- `r toupper(player_data$selling_point)`<h5>
+  <h5 class="bio" style="margin-top: -4%">HEIGHT/WEIGHT -- `r paste(player_data$height, paste(player_data$weight, "LBS", sep = " "), sep = "/")`<h5>
+  <h5 class="bio" style="margin-top: -4%">BIRTHDATE -- `r gsub("-", "/", player_data$birthdate)`<h5>
+  <h5 class="bio" style="margin-top: -4%">AGE -- `r paste(round(player_data$age,2), "YEARS", sep = " ")`<h5>
+  </div>
+
+<div class="bodytext">
+  <br>
+  <p class="tab" style="margin-top: -1.5%;"> `r player_data$description`<p>
+  <p class="tab"> Similar To: `r player_data$similar_to`<p>
+  <hr class="break" style="border:1px solid black"> </hr>
+  <p class ="tab"> **Positives:** <p>
+  <p class = "tab"> `r if(!is_empty(player_data$strength_1)) {paste("•", player_data$strength_1, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$strength_2)) {paste("•", player_data$strength_2, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$strength_3)) {paste("•", player_data$strength_3, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$strength_4)) {paste("•", player_data$strength_4, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$strength_5)) {paste("•", player_data$strength_5, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$strength_6)) {paste("•", player_data$strength_6, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$strength_7)) {paste("•", player_data$strength_7, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$strength_8)) {paste("•", player_data$strength_8, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$strength_9)) {paste("•", player_data$strength_9, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$strength_10)) {paste("•", player_data$strength_10, sep = " ")}`<p>
+
+  <p class="tab"> **Negatives:** <p>
+  <p class = "tab"> `r if(!is_empty(player_data$weakness_1)) {paste("•", player_data$weakness_1, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$weakness_2)) {paste("•", player_data$weakness_2, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$weakness_3)) {paste("•", player_data$weakness_3, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$weakness_4)) {paste("•", player_data$weakness_4, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$weakness_5)) {paste("•", player_data$weakness_5, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$weakness_6)) {paste("•", player_data$weakness_6, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$weakness_7)) {paste("•", player_data$weakness_7, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$weakness_8)) {paste("•", player_data$weakness_8, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$weakness_9)) {paste("•", player_data$weakness_9, sep = " ")}`<p>
+  <p class = "tab"> `r if(!is_empty(player_data$weakness_10)) {paste("•", player_data$weakness_10, sep = " ")}`<p>
+
+  <hr class="break" style="border:1px solid black"> </hr>
+  <p class="tab"> **20-80 SCOUTING GRADES:** <p>
+</div>
+
+<div class="row">
+  <div class="column"> ATHLETICISM -- `r player_data$athleticism_grade`</div>
+  <div class="column"> REFLEXES -- `r player_data$reflexes_grade`</div>
+</div>
+<div class="row">
+  <div class="column"> POSITIONING -- `r player_data$positioning_grade`</div>
+  <div class="column"> RECOVERY -- `r player_data$recovery_grade`</div>
+</div>
+</div>
