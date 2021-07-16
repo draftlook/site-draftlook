@@ -961,37 +961,6 @@ knitr::include_graphics("https://lh6.googleusercontent.com/WVix92BcTOlo5EXYUpteW
 ```
 -- is that Johnson really appears to lack stability in his upper body. There shouldn’t be much movement in the torso as a skater; if it doesn’t create additional force (it doesn’t), then it’s wasted movement. You can see how Johnson’s balance really seems to shift around quite a bit.
 
-`r if(!is_empty(info$dev_text_1)) {paste("**Development:**", info$dev_text_1, sep=" ")}`
-`r if(!is_empty(info$dev_text_1)) { "<br>" }`
-```{r}
-if(!is_empty(info$dev_clip_1)) {knitr::include_graphics(info$dev_clip_1)}
-```
-`r if(!is_empty(info$dev_clip_1)) { "<br>" }`
-`r if(!is_empty(info$dev_text_2)) {info$dev_text_2}`
-`r if(!is_empty(info$dev_text_2)) { "<br>" }`
-```{r}
-if(!is_empty(info$dev_clip_2)) {knitr::include_graphics(info$dev_clip_2)}
-```
-`r if(!is_empty(info$dev_clip_2)) { "<br>" }`
-`r if(!is_empty(info$dev_text_3)) {info$dev_text_3}`
-`r if(!is_empty(info$dev_text_3)) { "<br>" }`
-```{r}
-if(!is_empty(info$dev_clip_3)) {knitr::include_graphics(info$dev_clip_3)}
-```
-`r if(!is_empty(info$dev_clip_3)) { "<br>" }`
-`r if(!is_empty(info$dev_text_4)) {info$dev_text_4}`
-`r if(!is_empty(info$dev_text_4)) { "<br>" }`
-```{r}
-if(!is_empty(info$dev_clip_4)) {knitr::include_graphics(info$dev_clip_4)}
-```
-`r if(!is_empty(info$dev_clip_4)) { "<br>" }`
-`r if(!is_empty(info$dev_text_5)) {info$dev_text_5}`
-`r if(!is_empty(info$dev_text_5)) { "<br>" }`
-```{r}
-if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
-```
-`r if(!is_empty(info$dev_clip_5)) { "<br>" }`
-  
 <!-- Projection -->
 **Projection:**
 <br>
