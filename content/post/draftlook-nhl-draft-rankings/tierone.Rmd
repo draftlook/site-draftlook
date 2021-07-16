@@ -1538,7 +1538,7 @@ if(!is_empty(info$atil_clip_4)) {knitr::include_graphics(info$atil_clip_4)}
 `r if(!is_empty(info$ss_text_1)) {paste("**Swing Skill:**", info$ss_text_1, sep=" ")}`
 `r if(!is_empty(info$ss_text_1)) { "<br>" }`
 ```{r}
-  if(!is_empty(info$ss_clip_1)) {knitr::include_graphics("C:\\Users\\ellis\\Downloads\\Guenther Red Deer entries.mp4")}
+  if(!is_empty(info$ss_clip_1)) {knitr::include_graphics("https://youtu.be/JT7mglMgJhY")}
 ```
 `r if(!is_empty(info$ss_clip_1)) { "<br>" }`
 `r if(!is_empty(info$ss_text_2)) {info$ss_text_2}`
