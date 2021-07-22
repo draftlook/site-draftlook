@@ -317,6 +317,7 @@ if(!is_empty(info$dev_clip_5)) {knitr::include_graphics(info$dev_clip_5)}
 <br>
 `r if(!is_empty(info$low_end_proj)) {paste("*Low-end:*", info$low_end_proj, sep=" ")}`
 
+
 <!-- Methodology -->
 **Methodology:**
 <br>

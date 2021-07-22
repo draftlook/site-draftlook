@@ -4,7 +4,7 @@ author: ''
 date: ""
 output: html_fragment
 params:
-  name: B. Clarke
+  name: R. Kidney
 ---
 
 ```{r setup, include=FALSE}

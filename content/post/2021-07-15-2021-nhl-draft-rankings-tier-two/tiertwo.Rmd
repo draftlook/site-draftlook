@@ -1399,7 +1399,7 @@ if(!is_empty(info$meth_clip_1)) { knitr::include_graphics(info$meth_clip_1)}
 </div>
 </div>
 
-**10. Chaz Lucius, LHC, USA U18 (NTDP)**
+**15. Chaz Lucius, LHC, USA U18 (NTDP)**
 ```{r echo=FALSE }
 htmltools::includeHTML("C:\\Users\\ellis\\Desktop\\site-draftlook\\Cards\\CLucius.html")
 ```
