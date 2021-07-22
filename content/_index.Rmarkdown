@@ -2,10 +2,10 @@
 title: Home
 ---
 
-Hello and welcome to the DraftLook 2021 NHL Draft Rankings experience. Yes, we’re labelling it an “experience” rather than something normal like an “article” or “post” or just “rankings. But first-- for those of you that don't want to scroll through all this text, here's the rankings. Feel free to locate the profiles for prospects that you are interested in and pass on the rest. Tier one covers #1-8, tier two #9-16, tier three #17-23, tier four #24-30, and tier five containing the final five prospects. Control F should have you covered from there.
+Hello and welcome to the DraftLook 2021 NHL Draft Rankings experience. Yes, we’re labelling it an “experience” rather than something normal like an “article” or “post” or just “rankings. But first-- for those of you that don't want to scroll through all this text, here's the rankings. Feel free to locate the profiles for prospects that you are interested in and pass on the rest. Tier one covers #1-8, tier two #9-16, tier three #17-23, tier four #24-30, and tier five containing the final five prospects. Control F should have you covered from there (Apologies for the resolution).
 
-```{r, echo=FALSE }
-knitr::include_graphics("C:\\Users\\ellis\\Desktop\\site-draftlook\\rankingsimage.jpeg")
+```{r, echo=FALSE, fig.align='center', out.width="100%"}
+knitr::include_graphics("https://lh3.googleusercontent.com/keep-bbsk/AGk0z-NL1RgDMHQTniCDJui4TaOFjAooBlNR938y34qp7JrtQFTSWuFu3f6-Pdtj_vIU0I7C0L11XKKN_iIMcXLA3X167s3H89UrBzb_woY")
 ```
 
 So, "experience". That means that the rankings are broken up by tier, of which there are five. You can navigate between tiers using the boxes at the top of your screen, as well as navigation links contained at the top and bottom of each section. If you dislike repeatedly crashing browsers and/or the sound of an airplane taking off from your desktop, you will be glad that the rankings are divided in this fashion. The actual rankings, and even the tiers, mean little. The information provided for all 35 ranked players is more meaningful; this information conveys my perspective of a player’s strengths, weaknesses, and overall skillset, which you can use to influence your own thoughts depending on whether or not you believe I know what I’m talking about. I have also provided a ‘Methodology’ section for each player to help you understand why each player is ranked where they are (but again, the rankings are not very meaningful). I hope this offers at least a partial window into my thought process, and I would be happy to discuss reasoning with anybody who reaches out.
